@@ -16,6 +16,16 @@
 	}
 }
 
+html {
+    font-size: 62.5%; /* 1rem == 10px */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-public), serif;
+    font-size: 1.6rem;
+}
+
 @layer utilities {
 	.text-balance {
 		text-wrap: balance;

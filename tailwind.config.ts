@@ -15,26 +15,77 @@ const config: Config = {
 			}
 		},
 		extend: {
-			backgroundImage: {
-				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-				"gradient-conic":
-					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))"
+			fontFamily: {
+				public: ["Public", "sans-serif"],
+			},
+			fontSize: {
+				preset_1: [
+					"3.2rem",
+					{ lineHeight: "120%", fontWeight: "700", letterSpacing: "0" }
+				],
+				preset_2: [
+					"2rem",
+					{ lineHeight: "120%", fontWeight: "700", letterSpacing: "0" }
+				],
+				preset_3: [
+					"1.6rem",
+					{ lineHeight: "150%", fontWeight: "700", letterSpacing: "0" }
+				],
+				preset_4: [
+					"1.4rem",
+					{ lineHeight: "150%", fontWeight: "400", letterSpacing: "0" }
+				],
+				preset_4_bold: [
+					"1.4rem",
+					{ lineHeight: "150%", fontWeight: "700", letterSpacing: "0" }
+				],
+				preset_5: [
+					"1.2rem",
+					{ lineHeight: "150%", fontWeight: "400", letterSpacing: "0" }
+				],
+				preset_5_bold: [
+					"1.2rem",
+					{ lineHeight: "150%", fontWeight: "700", letterSpacing: "0" }
+				]
 			},
 			colors: {
-				primary: "#633CFF",
-				primary_light: "#BEADFF",
-				primary_lighter: "#EFEBFF",
-				dark_grey: "#333333",
-				grey: "#737373",
-				light_grey: "#FAFAFA",
-				white: "#FFFFFF",
-				red: "#FF3939",
-				borders: "#D9D9D9",
-				placeholder: "#EEEEEE"
+				beige: {
+					500: "#98908B",
+					100: "#F8F4F0"
+				},
+				grey: {
+					100: "#F2F2F2",
+					300: "#B3B3B3",
+					500: "#696868",
+					900: "#201F24"
+				},
+				purple: {
+					DEFAULT: "#826CB0",
+					100: "#AF81BA"
+				},
+				green: "#277C78",
+				yellow: "#F2CDAC",
+				cyan: "#82C9D7",
+				navy: "#626070",
+				red: "#C94736",
+				turquoise: "#597C7C",
+				brown: "#93674F",
+				magenta: "#934F6F",
+				blue: "#3F82B2",
+				navy_grey: "#97A0AC",
+				army_green: "#7F9161",
+				gold: "#CAB361",
+				orange: "#BE6C49"
 			},
-			boxShadow: {
-				drop_primary: "0 0 3.2rem 0 rgba(99, 60, 255, .25)",
-				drop_grey: "0 0 3.2rem 0 rgba(0, 0, 0, .10)",
+			spacing: {
+				1: ".4rem",
+				2: ".8rem",
+				3: "1.2rem",
+				4: "1.6rem",
+				5: "2rem",
+				6: "2.4rem",
+				7: "3.2rem",
+				8: "4rem"
 			}
 		}
 	},
