@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "./_components/Button";
+import Button from "./_components/ui/Button";
 import Link from "next/link";
 
 const ErrorPage = () => {

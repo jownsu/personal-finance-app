@@ -1,19 +1,19 @@
 import type { Config } from "tailwindcss";
-
 const config: Config = {
-	content: [
+    darkMode: ["class"],
+    content: [
 		"./pages/**/*.{js,ts,jsx,tsx,mdx}",
 		"./components/**/*.{js,ts,jsx,tsx,mdx}",
 		"./app/**/*.{js,ts,jsx,tsx,mdx}"
 	],
 	theme: {
-		container: {
-			center: true,
-			padding: {
-				DEFAULT: "1.6rem",
-				md: "2.4rem",
-			}
-		},
+    	container: {
+    		center: true,
+    		padding: {
+    			DEFAULT: "1.6rem",
+    			md: "2.4rem",
+    		}
+    	},
 		extend: {
 			fontFamily: {
 				public: ["Public", "sans-serif"],
@@ -88,7 +88,7 @@ const config: Config = {
 				8: "4rem"
 			}
 		}
-	},
-	plugins: []
+    },
+	plugins: [require("tailwindcss-animate")]
 };
 export default config;

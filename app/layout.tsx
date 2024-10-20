@@ -21,9 +21,9 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" className="h-full">
             <link rel="icon" href="/favicon-32x32.png" sizes="any" />
-            <body className={public_sans.className}>
+            <body className={`${public_sans.className} bg-beige-100 h-full`}>
                 {children}
                 <Toaster />
             </body>
