@@ -6,4 +6,4 @@
 
 - [x] Implement Login/Register UI. (RWD)
 - [x] Implement Login/Register form validation with react-hook-form and zod resolver.
-- [ ] Implement Hide and show password.
+- [x] Implement Hide and show password.
