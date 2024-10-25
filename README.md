@@ -5,5 +5,5 @@
 ## TODO:
 
 - [x] Implement Login/Register UI. (RWD)
-- [ ] Implement Login/Register form validation with react-hook-form and zod resolver.
+- [x] Implement Login/Register form validation with react-hook-form and zod resolver.
 - [ ] Implement Hide and show password.
