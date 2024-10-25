@@ -51,17 +51,32 @@ const MobileNav = () => {
     const pathname = usePathname();
 
     return (
-        <nav className="mt-auto h-[5.2rem] rounded-t-[.8rem] bg-grey-900 px-[1.6rem] pt-[.8rem]">
+        <nav className="mt-auto h-[5.2rem] rounded-t-[.8rem] bg-grey-900 px-[1.6rem] pt-[.8rem] md:h-[7.4rem] md:px-[4rem]">
             <ul className="flex h-full justify-between *:flex *:flex-1 *:items-center *:justify-center *:rounded-t-[.8rem]">
                 {LINKS.map((link) => (
                     <li
                         key={link.id}
-                        className={cn("text-grey-300", {
+                        className={cn("max-w-[10.4rem] text-grey-300", {
                             "border-b-[.4rem] border-green bg-beige-100 text-green":
                                 pathname === link.url
                         })}
                     >
-                        <Link href={link.url}>{link.icon}</Link>
+                        <Link
+                            href={link.url}
+                            className="flex flex-col items-center gap-[.4rem]"
+                        >
+                            {link.icon}
+                            <span
+                                className={cn(
+                                    "hidden !text-preset_5_bold text-grey-300 md:block",
+                                    {
+                                        "text-grey-900": pathname === link.url
+                                    }
+                                )}
+                            >
+                                {link.label}
+                            </span>
+                        </Link>
                     </li>
                 ))}
             </ul>
