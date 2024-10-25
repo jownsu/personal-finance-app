@@ -7,3 +7,6 @@
 - [x] Implement Login/Register UI. (RWD)
 - [x] Implement Login/Register form validation with react-hook-form and zod resolver.
 - [x] Implement Hide and show password.
+- [ ] Implement UI/UX of sidebar (Mobile)
+- [ ] Implement UI/UX of sidebar (Desktop)
+- [ ] Implement UI/UX overview (RWD)
