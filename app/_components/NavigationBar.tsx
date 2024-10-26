@@ -65,23 +65,28 @@ const NavigationBar = () => {
                     <li
                         key={link.id}
                         className={cn(
-                            "flex max-w-[10.4rem] flex-1 items-center justify-center rounded-t-[.8rem] text-grey-300 lg:h-[5.6rem] lg:max-w-none lg:flex-initial lg:justify-start lg:px-[3.2rem]",
+                            "group flex max-w-[10.4rem] flex-1 items-center justify-center rounded-t-[.8rem] text-grey-300 hover:text-grey-100 lg:h-[5.6rem] lg:max-w-none lg:flex-initial lg:justify-start",
                             {
-                                "border-b-[.4rem] border-green bg-beige-100 text-green lg:rounded-r-[1.2rem] lg:rounded-tl-none lg:border-b-0 lg:border-l-[.4rem] lg:px-[2.8rem]":
+                                "border-b-[.4rem] border-green bg-beige-100 !text-green lg:rounded-r-[1.2rem] lg:rounded-tl-none lg:border-b-0 lg:border-l-[.4rem]":
                                     pathname === link.url
                             }
                         )}
                     >
                         <Link
                             href={link.url}
-                            className="flex flex-col items-center gap-[.4rem] lg:flex-row lg:gap-[1.6rem] [&>svg]:size-[2.4rem]"
+                            className={cn(
+                                "flex h-full w-full flex-col items-center gap-[.4rem] lg:flex-row lg:gap-[1.6rem] lg:px-[3.2rem] [&>svg]:size-[2.4rem]",
+                                {
+                                    ["lg:px-[2.8rem]"]: pathname === link.url
+                                }
+                            )}
                         >
                             {link.icon}
                             <span
                                 className={cn(
-                                    "hidden !text-preset_5_bold text-grey-300 md:block lg:!text-preset_3",
+                                    "hidden !text-preset_5_bold text-grey-300 group-hover:text-grey-100 md:block lg:!text-preset_3",
                                     {
-                                        "text-grey-900": pathname === link.url
+                                        "!text-grey-900": pathname === link.url
                                     }
                                 )}
                             >
