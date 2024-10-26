@@ -128,7 +128,7 @@ const NavigationBar = () => {
 
             <button
                 type="button"
-                className="mt-auto flex h-[5.6rem] items-center gap-[1.6rem] pl-[3.2rem]"
+                className="hidden mt-auto lg:flex h-[5.6rem] items-center gap-[1.6rem] pl-[3.2rem]"
                 onClick={() => setOpen(!is_open)}
             >
                 <BackIcon
