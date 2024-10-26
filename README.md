@@ -9,5 +9,5 @@
 - [x] Implement Hide and show password.
 - [x] Implement UI/UX of sidebar (Mobile * Tablet)
 - [x] Implement UI/UX of sidebar (Desktop)
-- [ ] Implement Minimize/Maximize of Sidebar
+- [x] Implement Minimize/Maximize of Sidebar
 - [ ] Implement UI/UX overview (RWD)
