@@ -1,7 +1,7 @@
 import { cva, VariantProps } from "class-variance-authority";
 import { ButtonHTMLAttributes, forwardRef } from "react";
 import { Slot } from "@radix-ui/react-slot";
-import { cn } from "../_utils/helpers";
+import { cn } from "../../_utils/helpers";
 
 interface Props
     extends ButtonHTMLAttributes<HTMLButtonElement>,
@@ -10,12 +10,12 @@ interface Props
         }
 
 export const btnVariants = cva(
-    "h-[4.6rem] rounded-[.8rem] disabled:opacity-25 font-semibold duration-200 px-[2.7rem]",
+    "h-[5.3rem] rounded-[.8rem] disabled:opacity-25 font-semibold duration-200 px-[2.7rem] text-preset_4_bold",
     {
         variants: {
             variant: {
-                default: "bg-primary hover:bg-primary_light text-white",
-                outline: "bg-white border border-primary text-primary hover:bg-primary_lighter"
+                default: "bg-gray-900 text-white hover:bg-grey-500",
+                secondary: "bg-beige-100 text-gray-900 hover:bg-white hover:outline hover:outline-1 hover:outline-beige-500",
             },
             size: {
                 default: "w-fit",
