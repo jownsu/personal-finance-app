@@ -99,20 +99,20 @@ const NavigationBar = () => {
                         <Link
                             href={link.url}
                             className={cn(
-                                "flex h-full w-full flex-col items-center gap-[.4rem] lg:flex-row lg:gap-[1.6rem] lg:pl-[3.2rem] [&>svg]:size-[2.4rem]",
+                                "flex lg:h-full w-full flex-col items-center gap-[.4rem] lg:flex-row lg:gap-[1.6rem] lg:pl-[3.2rem]",
                                 {
                                     ["lg:pl-[2.8rem]"]: pathname === link.url
                                 }
                             )}
                         >
-                            <div className="size-[2.4rem] flex-shrink-0 *:size-full">
+                            <div className="size-[1.8rem] flex-shrink-0 *:size-full">
                                 {link.icon}
                             </div>
                             <span
                                 className={cn(
                                     "hidden !text-preset_5_bold text-grey-300 group-hover:text-grey-100 md:block lg:!text-preset_3",
                                     {
-                                        "!text-grey-900": pathname === link.url,
+                                        "text-grey-900": pathname === link.url,
                                         "w-0 opacity-0": !is_open,
                                         "opacity-100 transition-opacity delay-200 duration-200":
                                             is_open
