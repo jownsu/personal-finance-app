@@ -1,5 +1,6 @@
 /* COMPONENTS */
 import BalanceCard from "../_components/BalanceCard";
+import Pots from "../_components/Pots";
 
 /* DATA */
 import { balance } from "../_constants/data";
@@ -22,6 +23,13 @@ const HomePage = () => {
                     label="Current Balance"
                     balance={balance.current}
                 />
+            </div>
+
+            <div className="flex flex-col xl:flex-row">
+                <div className="xl:flex-1 xl:gap-[2.4rem]">
+                    <Pots />
+                </div>
+                <div className="xl:basis-[42.8rem]"></div>
             </div>
         </div>
     );

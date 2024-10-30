@@ -4,6 +4,35 @@ export const balance = {
     expenses: 1700.5
 };
 
+export const total_saved = 850;
+
+export const pots_overview = [
+    {
+        id: 1,
+        name: "Savings",
+        value: 159,
+        bg: "#277C78"
+    },
+    {
+        id: 2,
+        name: "Gift",
+        value: 40,
+        bg: "#82C9D7"
+    },
+    {
+        id: 3,
+        name: "Concert Ticket",
+        value: 110,
+        bg: "#626070"
+    },
+    {
+        id: 4,
+        name: "New Laptop",
+        value: 10,
+        bg: "#F2CDAC"
+    }
+];
+
 export const transactions = [
     {
         avatar: "./assets/images/avatars/emma-richardson.jpg",
