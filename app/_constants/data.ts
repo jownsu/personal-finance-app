@@ -33,6 +33,54 @@ export const pots_overview = [
     }
 ];
 
+export const transactions_overview = [
+    {
+        id: 1,
+        avatar: "/images/avatars/emma-richardson.jpg",
+        name: "Emma Richardson",
+        category: "General",
+        date: "2024-08-19T14:23:11Z",
+        amount: 75.5,
+        recurring: false
+    },
+    {
+        id: 2,
+        avatar: "/images/avatars/savory-bites-bistro.jpg",
+        name: "Savory Bites Bistro",
+        category: "Dining Out",
+        date: "2024-08-19T20:23:11Z",
+        amount: -55.5,
+        recurring: false
+    },
+    {
+        id: 3,
+        avatar: "/images/avatars/daniel-carter.jpg",
+        name: "Daniel Carter",
+        category: "General",
+        date: "2024-08-18T09:45:32Z",
+        amount: -42.3,
+        recurring: false
+    },
+    {
+        id: 4,
+        avatar: "/images/avatars/sun-park.jpg",
+        name: "Sun Park",
+        category: "General",
+        date: "2024-08-17T16:12:05Z",
+        amount: 120.0,
+        recurring: false
+    },
+    {
+        id: 5,
+        avatar: "/images/avatars/urban-services-hub.jpg",
+        name: "Urban Services Hub",
+        category: "General",
+        date: "2024-08-17T21:08:09Z",
+        amount: -65.0,
+        recurring: false
+    },
+];
+
 export const transactions = [
     {
         avatar: "./assets/images/avatars/emma-richardson.jpg",

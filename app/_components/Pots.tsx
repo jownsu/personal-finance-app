@@ -15,7 +15,7 @@ const Pots = () => {
                 <h2 className="text-preset_2 text-grey-900">Pots</h2>
                 <Link
                     href="/pots"
-                    className="flex items-center gap-[1.2rem] text-grey-500"
+                    className="flex items-center gap-[1.2rem] text-grey-500 text-preset_4"
                 >
                     See Details <CaretRightIcon className="size-[1rem]" />
                 </Link>
