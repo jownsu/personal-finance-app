@@ -112,7 +112,7 @@ const NavigationBar = () => {
                                 className={cn(
                                     "hidden !text-preset_5_bold text-grey-300 group-hover:text-grey-100 md:block lg:!text-preset_3",
                                     {
-                                        "text-grey-900": pathname === link.url,
+                                        "text-grey-900 group-hover:text-grey-500": pathname === link.url,
                                         "w-0 opacity-0": !is_open,
                                         "opacity-100 transition-opacity delay-200 duration-200":
                                             is_open
