@@ -1,4 +1,3 @@
-
 /* REACT */
 import Link from "next/link";
 
@@ -11,7 +10,7 @@ import { transactions_overview } from "../_constants/data";
 
 const Transactions = () => {
     return (
-        <div className="flex w-full flex-col gap-[1.4rem] rounded-[1.2rem] bg-white px-[2rem] py-[2.4rem] md:p-[3.2rem]">
+        <div className="flex w-full flex-1 flex-col gap-[1.4rem] rounded-[1.2rem] bg-white px-[2rem] py-[2.4rem] md:p-[3.2rem]">
             <div className="flex items-center justify-between">
                 <h2 className="text-preset_2 text-grey-900">Transactions</h2>
                 <Link

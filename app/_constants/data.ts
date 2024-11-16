@@ -525,6 +525,7 @@ export const budgets_overview = [
         bg: "#626070"
     }
 ];
+
 export const budgets_overview_overall = {
     limit: 975,
     total: 338
@@ -560,5 +561,26 @@ export const pots = [
         target: 1440.0,
         total: 531.0,
         theme: "#826CB0"
+    }
+];
+
+export const recurring_bills = [
+    {
+        id: 1,
+        name: "Paid Bills",
+        theme: "#277C78",
+        amount: 190,
+    },
+    {
+        id: 2,
+        name: "Total Upcoming",
+        theme: "#F2CDAC",
+        amount: 194.98,
+    },
+    {
+        id: 3,
+        name: "Due Soon",
+        theme: "#82C9D7",
+        amount: 59.98,
     }
 ];
