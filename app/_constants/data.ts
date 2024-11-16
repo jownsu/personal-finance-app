@@ -78,7 +78,7 @@ export const transactions_overview = [
         date: "2024-08-17T21:08:09Z",
         amount: -65.0,
         recurring: false
-    },
+    }
 ];
 
 export const transactions = [
@@ -498,6 +498,37 @@ export const budgets = [
         theme: "#626070"
     }
 ];
+
+export const budgets_overview = [
+    {
+        id: 1,
+        name: "Entertainment",
+        value: 50,
+        bg: "#277C78"
+    },
+    {
+        id: 2,
+        name: "Bills",
+        value: 750,
+        bg: "#82C9D7"
+    },
+    {
+        id: 3,
+        name: "Dining Out",
+        value: 75,
+        bg: "#F2CDAC"
+    },
+    {
+        id: 4,
+        name: "Personal Care",
+        value: 100,
+        bg: "#626070"
+    }
+];
+export const budgets_overview_overall = {
+    limit: 975,
+    total: 338
+};
 
 export const pots = [
     {
