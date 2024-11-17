@@ -58,7 +58,7 @@ const NavigationBar = () => {
     return (
         <nav
             className={cn(
-                "mt-auto h-[5.2rem] rounded-t-[.8rem] bg-grey-900 px-[1.6rem] pt-[.8rem] duration-200 md:h-[7.4rem] md:px-[4rem] lg:mt-0 lg:flex lg:h-auto lg:w-[30rem] lg:flex-col lg:gap-[2.4rem] lg:rounded-r-[1.6rem] lg:rounded-tl-none lg:px-0 lg:pb-[5.8rem] lg:pr-[2.4rem] lg:pt-0",
+                "mt-auto h-[5.2rem] rounded-t-[.8rem] bg-grey-900 px-[1.6rem] pt-[.8rem] duration-200 md:h-[7.4rem] md:px-[4rem] lg:mt-0 lg:flex lg:h-auto lg:w-[30rem] lg:flex-col lg:gap-[2.4rem] lg:rounded-r-[1.6rem] lg:rounded-tl-none lg:px-0 lg:pb-[5.8rem] lg:pr-[2.4rem] lg:pt-0 fixed bottom-0 w-full",
                 {
                     ["lg:w-[8.8rem] lg:pr-[1rem]"]: !is_open
                 }
