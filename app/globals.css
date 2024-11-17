@@ -32,6 +32,6 @@ body {
 	}
 
 	.container {
-        @apply xl:!max-w-[1392px] max-w-full;
+        @apply lg:pr-[4rem];
     }
 }

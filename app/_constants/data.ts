@@ -4,6 +4,83 @@ export const balance = {
     expenses: 1700.5
 };
 
+export const total_saved = 850;
+
+export const pots_overview = [
+    {
+        id: 1,
+        name: "Savings",
+        value: 159,
+        bg: "#277C78"
+    },
+    {
+        id: 2,
+        name: "Gift",
+        value: 40,
+        bg: "#82C9D7"
+    },
+    {
+        id: 3,
+        name: "Concert Ticket",
+        value: 110,
+        bg: "#626070"
+    },
+    {
+        id: 4,
+        name: "New Laptop",
+        value: 10,
+        bg: "#F2CDAC"
+    }
+];
+
+export const transactions_overview = [
+    {
+        id: 1,
+        avatar: "/images/avatars/emma-richardson.jpg",
+        name: "Emma Richardson",
+        category: "General",
+        date: "2024-08-19T14:23:11Z",
+        amount: 75.5,
+        recurring: false
+    },
+    {
+        id: 2,
+        avatar: "/images/avatars/savory-bites-bistro.jpg",
+        name: "Savory Bites Bistro",
+        category: "Dining Out",
+        date: "2024-08-19T20:23:11Z",
+        amount: -55.5,
+        recurring: false
+    },
+    {
+        id: 3,
+        avatar: "/images/avatars/daniel-carter.jpg",
+        name: "Daniel Carter",
+        category: "General",
+        date: "2024-08-18T09:45:32Z",
+        amount: -42.3,
+        recurring: false
+    },
+    {
+        id: 4,
+        avatar: "/images/avatars/sun-park.jpg",
+        name: "Sun Park",
+        category: "General",
+        date: "2024-08-17T16:12:05Z",
+        amount: 120.0,
+        recurring: false
+    },
+    {
+        id: 5,
+        avatar: "/images/avatars/urban-services-hub.jpg",
+        name: "Urban Services Hub",
+        category: "General",
+        date: "2024-08-17T21:08:09Z",
+        amount: -65.0,
+        recurring: false
+    }
+];
+
 export const transactions = [
     {
         avatar: "./assets/images/avatars/emma-richardson.jpg",
@@ -422,6 +499,38 @@ export const budgets = [
     }
 ];
 
+export const budgets_overview = [
+    {
+        id: 1,
+        name: "Entertainment",
+        value: 50,
+        bg: "#277C78"
+    },
+    {
+        id: 2,
+        name: "Bills",
+        value: 750,
+        bg: "#82C9D7"
+    },
+    {
+        id: 3,
+        name: "Dining Out",
+        value: 75,
+        bg: "#F2CDAC"
+    },
+    {
+        id: 4,
+        name: "Personal Care",
+        value: 100,
+        bg: "#626070"
+    }
+];
+
+export const budgets_overview_overall = {
+    limit: 975,
+    total: 338
+};
+
 export const pots = [
     {
         name: "Savings",
@@ -452,5 +561,26 @@ export const pots = [
         target: 1440.0,
         total: 531.0,
         theme: "#826CB0"
+    }
+];
+
+export const recurring_bills = [
+    {
+        id: 1,
+        name: "Paid Bills",
+        theme: "#277C78",
+        amount: 190,
+    },
+    {
+        id: 2,
+        name: "Total Upcoming",
+        theme: "#F2CDAC",
+        amount: 194.98,
+    },
+    {
+        id: 3,
+        name: "Due Soon",
+        theme: "#82C9D7",
+        amount: 59.98,
     }
 ];
