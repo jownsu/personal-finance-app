@@ -58,7 +58,7 @@ const NavigationBar = () => {
     return (
         <nav
             className={cn(
-                "mt-auto h-[5.2rem] rounded-t-[.8rem] bg-grey-900 px-[1.6rem] pt-[.8rem] duration-200 md:h-[7.4rem] md:px-[4rem] lg:mt-0 lg:flex lg:h-auto lg:w-[30rem] lg:flex-col lg:gap-[2.4rem] lg:rounded-r-[1.6rem] lg:rounded-tl-none lg:px-0 lg:pb-[5.8rem] lg:pr-[2.4rem] lg:pt-0 fixed bottom-0 w-full",
+                "fixed bottom-0 mt-auto h-[5.2rem] w-full rounded-t-[.8rem] bg-grey-900 px-[1.6rem] pt-[.8rem] duration-200 md:h-[7.4rem] md:px-[4rem] lg:relative lg:mt-0 lg:flex lg:h-auto lg:w-[30rem] lg:flex-col lg:gap-[2.4rem] lg:rounded-r-[1.6rem] lg:rounded-tl-none lg:px-0 lg:pb-[5.8rem] lg:pr-[2.4rem] lg:pt-0",
                 {
                     ["lg:w-[8.8rem] lg:pr-[1rem]"]: !is_open
                 }
@@ -99,7 +99,7 @@ const NavigationBar = () => {
                         <Link
                             href={link.url}
                             className={cn(
-                                "flex lg:h-full w-full flex-col items-center gap-[.4rem] lg:flex-row lg:gap-[1.6rem] lg:pl-[3.2rem]",
+                                "flex w-full flex-col items-center gap-[.4rem] lg:h-full lg:flex-row lg:gap-[1.6rem] lg:pl-[3.2rem]",
                                 {
                                     ["lg:pl-[2.8rem]"]: pathname === link.url
                                 }
@@ -112,7 +112,8 @@ const NavigationBar = () => {
                                 className={cn(
                                     "hidden !text-preset_5_bold text-grey-300 group-hover:text-grey-100 md:block lg:!text-preset_3",
                                     {
-                                        "text-grey-900 group-hover:text-grey-500": pathname === link.url,
+                                        "text-grey-900 group-hover:text-grey-500":
+                                            pathname === link.url,
                                         "w-0 opacity-0": !is_open,
                                         "opacity-100 transition-opacity delay-200 duration-200":
                                             is_open
@@ -128,7 +129,7 @@ const NavigationBar = () => {
 
             <button
                 type="button"
-                className="hidden mt-auto lg:flex h-[5.6rem] items-center gap-[1.6rem] pl-[3.2rem]"
+                className="mt-auto hidden h-[5.6rem] items-center gap-[1.6rem] pl-[3.2rem] lg:flex"
                 onClick={() => setOpen(!is_open)}
             >
                 <BackIcon
