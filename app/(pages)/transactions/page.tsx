@@ -1,4 +1,5 @@
 import Filters from "./_components/Filters";
+import TransactionsTable from "./_components/TransactionsTable";
 
 const TransactionPage = () => {
     return (
@@ -7,6 +8,7 @@ const TransactionPage = () => {
 
             <div className="rounded-[1.2rem] bg-white px-[2rem] py-[2.4rem] md:px-[3.2rem] md:py-[3.2rem]">
                 <Filters />
+                <TransactionsTable />
             </div>
         </div>
     );
