@@ -12,13 +12,17 @@ import {
     SelectValue
 } from "@/app/_components/ui/Select";
 
+/* PLUGINS */
+import { Icon as RadixSelectIcon } from "@radix-ui/react-select";
+import { FaCaretDown } from "react-icons/fa";
+
 /* CONSTANTS */
 import { category_options, sort_options } from "@/app/_constants/constants";
 
 const Filters = () => {
     return (
         <div className="flex items-center justify-between md:gap-[2.4rem]">
-            <div className="flex h-[4.5rem] w-[21.5rem] items-center gap-[1.6rem] rounded-[.8rem] border border-beige-500 px-[2rem]">
+            <div className="flex h-[4.5rem] w-full max-w-[21.5rem] items-center gap-[1.6rem] rounded-[.8rem] border border-beige-500 px-[2rem] lg:max-w-[32rem]">
                 <input
                     type="text"
                     placeholder="Search Transaction"
@@ -27,17 +31,20 @@ const Filters = () => {
                 <SearchIcon className="shrink-0" />
             </div>
 
-            <div className="flex gap-[2.4rem]">
+            <div className="flex shrink-0 gap-[2.4rem]">
                 <Select defaultValue="1">
                     <div className="flex items-center gap-[.8rem]">
                         <span className="hidden flex-shrink-0 text-preset_4 text-grey-500 md:block">
                             Sort By
                         </span>
                         <SelectTrigger className="">
-                            <div className="hidden h-[4.5rem] w-[11.3rem] rounded-[.8rem] border border-red px-[2rem] md:block">
-                                <span className="!hidden md:!block">
-                                    <SelectValue placeholder="" className="" />
+                            <div className="hidden h-[4.5rem] w-[11.3rem] items-center justify-between rounded-[.8rem] border border-beige-500 px-[2rem] md:flex">
+                                <span className="!hidden text-preset_4 text-grey-900 md:!block">
+                                    <SelectValue />
                                 </span>
+                                <RadixSelectIcon asChild>
+                                    <FaCaretDown className="size-[1.6rem] fill-grey-900" />
+                                </RadixSelectIcon>
                             </div>
 
                             <div className="md:hidden">
@@ -59,10 +66,13 @@ const Filters = () => {
                             Category
                         </span>
                         <SelectTrigger className="">
-                            <div className="hidden h-[4.5rem] w-[11.3rem] rounded-[.8rem] border border-red px-[2rem] md:block">
-                                <span className="!hidden md:!block">
-                                    <SelectValue placeholder="" className="" />
+                            <div className="hidden h-[4.5rem] w-[17.7rem] items-center justify-between rounded-[.8rem] border border-beige-500 px-[2rem] md:flex">
+                                <span className="!hidden text-preset_4 text-grey-900 md:!block">
+                                    <SelectValue />
                                 </span>
+                                <RadixSelectIcon asChild>
+                                    <FaCaretDown className="size-[1.6rem] text-grey-900" />
+                                </RadixSelectIcon>
                             </div>
 
                             <div className="md:hidden">

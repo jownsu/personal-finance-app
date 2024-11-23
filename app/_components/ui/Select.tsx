@@ -1,8 +1,8 @@
 "use client";
 
-import * as React from "react";
 import * as SelectPrimitive from "@radix-ui/react-select";
-import { Check, ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import * as React from "react";
 
 import { cn } from "@/app/_utils/helpers";
 
@@ -113,7 +113,7 @@ const SelectItem = React.forwardRef<
     <SelectPrimitive.Item
         ref={ref}
         className={cn(
-            "focus:bg-accent focus:text-accent-foreground relative flex w-full cursor-default select-none items-center rounded-sm text-preset_4 text-grey-900 outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 py-[1.2rem]",
+            "focus:bg-accent focus:text-accent-foreground relative flex w-full cursor-default select-none items-center rounded-sm py-[1.2rem] text-preset_4 text-grey-900 outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
             className
         )}
         {...props}
@@ -137,13 +137,13 @@ SelectSeparator.displayName = SelectPrimitive.Separator.displayName;
 
 export {
     Select,
-    SelectGroup,
-    SelectValue,
-    SelectTrigger,
     SelectContent,
-    SelectLabel,
+    SelectGroup,
     SelectItem,
-    SelectSeparator,
+    SelectLabel,
+    SelectScrollDownButton,
     SelectScrollUpButton,
-    SelectScrollDownButton
+    SelectSeparator,
+    SelectTrigger,
+    SelectValue
 };
