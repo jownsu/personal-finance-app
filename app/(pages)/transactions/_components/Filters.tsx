@@ -21,12 +21,12 @@ import { category_options, sort_options } from "@/app/_constants/constants";
 
 const Filters = () => {
     return (
-        <div className="flex items-center justify-between md:gap-[2.4rem]">
-            <div className="flex h-[4.5rem] w-full max-w-[21.5rem] items-center gap-[1.6rem] rounded-[.8rem] border border-beige-500 px-[2rem] lg:max-w-[32rem]">
+        <div className="sticky top-0 z-50 flex items-center justify-between rounded-[1.2rem] bg-white px-[2rem] py-[2.4rem] md:gap-[2.4rem] md:px-[3.2rem] md:py-[3.2rem]">
+            <div className="flex h-[4.5rem] w-full max-w-[21.5rem] items-center gap-[1.6rem] rounded-[.8rem] border border-beige-500 bg-white px-[2rem] lg:max-w-[32rem]">
                 <input
                     type="text"
                     placeholder="Search Transaction"
-                    className="min-w-auto w-full truncate text-preset_4"
+                    className="min-w-auto w-full truncate bg-white text-preset_4"
                 />
                 <SearchIcon className="shrink-0" />
             </div>
