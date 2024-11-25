@@ -43,4 +43,10 @@ const Button = forwardRef<HTMLButtonElement, Props>(
 );
 Button.displayName = "Button";
 
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof btnVariants> {
+  asChild?: boolean
+}
+
 export default Button;

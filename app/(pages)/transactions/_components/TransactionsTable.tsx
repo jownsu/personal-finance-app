@@ -19,6 +19,15 @@ import { cn } from "@/app/_utils/helpers";
 
 /* DATA */
 import { transactions } from "@/app/_constants/data";
+import {
+    Pagination,
+    PaginationContent,
+    PaginationEllipsis,
+    PaginationItem,
+    PaginationLink,
+    PaginationNext,
+    PaginationPrevious
+} from "@/app/_components/ui/Pagination";
 
 const TransactionsTable = () => {
     return (
@@ -89,6 +98,30 @@ const TransactionsTable = () => {
                     ))}
                 </TableBody>
             </Table>
+            <Pagination>
+                <PaginationContent>
+                    <PaginationItem>
+                        <PaginationPrevious href="#" />
+                    </PaginationItem>
+                    <PaginationItem>
+                        <PaginationLink href="#">1</PaginationLink>
+                    </PaginationItem>
+                    <PaginationItem>
+                        <PaginationLink isActive href="#">
+                            2
+                        </PaginationLink>
+                    </PaginationItem>
+                    <PaginationItem>
+                        <PaginationEllipsis />
+                    </PaginationItem>
+                    <PaginationItem>
+                        <PaginationLink href="#">5</PaginationLink>
+                    </PaginationItem>
+                    <PaginationItem>
+                        <PaginationNext href="#" />
+                    </PaginationItem>
+                </PaginationContent>
+            </Pagination>
         </div>
     );
 };
