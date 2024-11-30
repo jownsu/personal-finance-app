@@ -32,7 +32,7 @@ import {
 const TransactionsTable = () => {
     return (
         <div className="px-[2rem] pb-[2.4rem] md:px-[3.2rem] md:pb-[3.2rem]">
-            <Table>
+            <Table className="mb-[3.2rem]">
                 <TableHeader className="hidden md:table-header-group">
                     <TableRow className="text-grey-500 *:px-0 *:pb-[2rem] *:pt-[1.3rem] *:text-preset_5 lg:*:pt-[.4rem]">
                         <TableHead>Recipient / Sender</TableHead>
@@ -99,24 +99,36 @@ const TransactionsTable = () => {
                 </TableBody>
             </Table>
             <Pagination>
-                <PaginationContent>
+                <PaginationContent className="w-full justify-center md:justify-between">
                     <PaginationItem>
                         <PaginationPrevious href="#" />
                     </PaginationItem>
-                    <PaginationItem>
-                        <PaginationLink href="#">1</PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                        <PaginationLink isActive href="#">
-                            2
-                        </PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                        <PaginationEllipsis />
-                    </PaginationItem>
-                    <PaginationItem>
-                        <PaginationLink href="#">5</PaginationLink>
-                    </PaginationItem>
+                    <div className="flex gap-[.8rem]">
+                        <PaginationItem>
+                            <PaginationLink href="#">1</PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem>
+                            <PaginationLink isActive href="#">
+                                2
+                            </PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem className="hidden md:block">
+                            <PaginationLink href="#">
+                                3
+                            </PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem className="hidden md:block">
+                            <PaginationLink href="#">
+                                4
+                            </PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem className="md:hidden">
+                            <PaginationEllipsis />
+                        </PaginationItem>
+                        <PaginationItem>
+                            <PaginationLink href="#">5</PaginationLink>
+                        </PaginationItem>
+                    </div>
                     <PaginationItem>
                         <PaginationNext href="#" />
                     </PaginationItem>

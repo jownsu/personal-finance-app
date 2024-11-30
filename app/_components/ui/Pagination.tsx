@@ -68,10 +68,10 @@ const PaginationPrevious = ({
     <PaginationLink
         aria-label="Go to previous page"
         size="default"
-        className={cn("mr-[.35rem] w-[4.8rem]", className)}
+        className={cn("mr-[.35rem] w-[4.8rem] flex items-center justify-center md:justify-between md:w-[9.5rem] md:px-[1.6rem]", className)}
         {...props}
     >
-        <LeftIcon className="size-[1rem]" />
+        <LeftIcon className="size-[1rem] fill-grey-500" /> <span className="hidden md:block text-grey-900 text-preset_4">Prev</span>
     </PaginationLink>
 );
 PaginationPrevious.displayName = "PaginationPrevious";
@@ -83,10 +83,10 @@ const PaginationNext = ({
     <PaginationLink
         aria-label="Go to next page"
         size="default"
-        className={cn("ml-[.35rem] w-[4.8rem]", className)}
+        className={cn("ml-[.35rem] w-[4.8rem] flex items-center justify-center md:justify-between md:w-[9.5rem] md:px-[1.6rem]", className)}
         {...props}
     >
-        <RightIcon className="size-[1rem]" />
+        <span className="hidden md:block text-grey-900 text-preset_4">Next</span><RightIcon className="size-[1rem] fill-grey-500" />
     </PaginationLink>
 );
 PaginationNext.displayName = "PaginationNext";

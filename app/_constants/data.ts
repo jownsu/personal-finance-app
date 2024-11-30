@@ -324,7 +324,7 @@ export const transactions = [
         recurring: true
     },
     {
-        avatar: "/assets/images/avatars/emma-richardson.jpg",
+        avatar: "/images/avatars/emma-richardson.jpg",
         name: "Emma Richardson",
         category: "General",
         date: "2024-07-20T17:30:55Z",
