@@ -31,20 +31,20 @@ const BudgetPage = () => {
                             </span>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-[1.6rem]">
+                    <div className="flex flex-col gap-[.4rem]">
                         <h2 className="text-preset_2 text-grey-900">
                             Spending Summary
                         </h2>
-                        <div className="flex flex-col gap-[1.6rem]">
+                        <div className="flex flex-col gap-[1.3rem] divide-y divide-grey-100 *:pt-[1.6rem]">
                             {budgets_overview.map((budget) => (
                                 <div
                                     key={budget.id}
-                                    className="flex h-[2.1rem] justify-between gap-[1.6rem]"
+                                    className="flex justify-between gap-[1.6rem]"
                                 >
                                     <div className="flex gap-[1.6rem]">
                                         <span
                                             className={
-                                                "block h-full w-[.4rem] flex-shrink-0 rounded-[.8rem]"
+                                                "block h-[2.1rem] w-[.4rem] flex-shrink-0 rounded-[.8rem]"
                                             }
                                             style={{
                                                 backgroundColor: budget.bg
