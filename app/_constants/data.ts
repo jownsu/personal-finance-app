@@ -505,24 +505,28 @@ export const budgets_overview = [
         id: 1,
         name: "Entertainment",
         value: 50,
+        max_value: 100,
         bg: "#277C78"
     },
     {
         id: 2,
         name: "Bills",
         value: 750,
+        max_value: 1250,
         bg: "#82C9D7"
     },
     {
         id: 3,
         name: "Dining Out",
         value: 75,
+        max_value: 150,
         bg: "#F2CDAC"
     },
     {
         id: 4,
         name: "Personal Care",
         value: 100,
+        max_value: 450,
         bg: "#626070"
     }
 ];
