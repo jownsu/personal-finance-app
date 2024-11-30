@@ -18,9 +18,9 @@ const BudgetPage = () => {
                 </Button>
             </div>
 
-            <div className="flex flex-col">
-                <div className="flex flex-col gap-[5.4rem] rounded-[1.2rem] bg-white px-[2rem] py-[1.6rem] pt-[4.6rem] md:flex-row md:justify-between md:gap-[6rem] md:py-[5.2rem] md:pl-[6rem] md:pr-[3.2rem]">
-                    <div className="relative mx-auto size-[24rem] md:mx-0">
+            <div className="flex flex-col md:flex-row">
+                <div className="flex flex-col gap-[5.4rem] rounded-[1.2rem] bg-white px-[2rem] py-[1.6rem] pt-[4.6rem] md:flex-row md:justify-between md:gap-[6rem] md:py-[5.2rem] md:pl-[6rem] md:pr-[3.2rem] lg:max-w-[42.8rem] lg:flex-1 lg:flex-col lg:gap-[5.5rem] lg:px-[3.2rem] lg:pb-[2.4rem]">
+                    <div className="relative mx-auto size-[24rem] md:mx-0 lg:mx-auto">
                         <Doughnut data={budgets_overview} />
                         <div className="absolute left-[50%] top-[50%] flex translate-x-[-50%] translate-y-[-50%] flex-col items-center">
                             <span className="text-preset_1 text-grey-900">
@@ -80,7 +80,7 @@ const BudgetPage = () => {
                         </div>
                     </div>
                 </div>
-                <div></div>
+                <div className="lg:flex-1"></div>
             </div>
         </div>
     );
