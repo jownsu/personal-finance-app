@@ -19,8 +19,8 @@ const BudgetPage = () => {
             </div>
 
             <div className="flex flex-col">
-                <div className="flex flex-col gap-[5.4rem] rounded-[1.2rem] bg-white px-[2rem] py-[1.6rem] pt-[4.6rem]">
-                    <div className="relative mx-auto size-[24rem]">
+                <div className="flex flex-col gap-[5.4rem] rounded-[1.2rem] bg-white px-[2rem] py-[1.6rem] pt-[4.6rem] md:flex-row md:justify-between md:gap-[6rem] md:py-[5.2rem] md:pl-[6rem] md:pr-[3.2rem]">
+                    <div className="relative mx-auto size-[24rem] md:mx-0">
                         <Doughnut data={budgets_overview} />
                         <div className="absolute left-[50%] top-[50%] flex translate-x-[-50%] translate-y-[-50%] flex-col items-center">
                             <span className="text-preset_1 text-grey-900">
@@ -31,7 +31,7 @@ const BudgetPage = () => {
                             </span>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-[.4rem]">
+                    <div className="flex flex-col gap-[.4rem] md:flex-1 md:gap-[.8rem]">
                         <h2 className="text-preset_2 text-grey-900">
                             Spending Summary
                         </h2>
