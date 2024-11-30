@@ -1,0 +1,144 @@
+import EllipsisIcon from "@/public/images/icon-ellipsis.svg";
+import ProgressBar from "./ProgressBar";
+import Link from "next/link";
+import CaretRightIcon from "@/public/images/icon-caret-right.svg";
+import moment from "moment";
+
+const budget = {
+    id: 1,
+    theme: "#277C78",
+    name: "Entertainment",
+    maximum: 50,
+    spend: 25,
+    free: 50,
+    latest_spending: [
+        {
+            id: 1,
+            name: "Papa Software",
+            date: "08-16-2024",
+            amount: 10
+        },
+        {
+            id: 2,
+            name: "Quebeck Service",
+            date: "08-12-2024",
+            amount: 5
+        },
+        {
+            id: 3,
+            name: "Romeo Cloud Service",
+            date: "08-05-2024",
+            amount: 10
+        }
+    ]
+};
+
+const BudgetItem = () => {
+    return (
+        <div className="flex flex-col gap-[2rem] rounded-[1.2rem] bg-white px-[2rem] py-[2.4rem]">
+            <div className="flex items-center gap-[1.6rem]">
+                <span
+                    className="block size-[1.6rem] rounded-full"
+                    style={{ backgroundColor: budget.theme }}
+                ></span>
+                <h2 className="mr-auto text-preset_2 text-grey-900">
+                    Entertainment
+                </h2>
+                <button type="button" aria-label="budget action">
+                    <EllipsisIcon />
+                </button>
+            </div>
+
+            <div className="flex flex-col gap-[1.6rem]">
+                <div className="text-grey-500">
+                    Maximum of{" "}
+                    {budget.maximum.toLocaleString("en-US", {
+                        style: "currency",
+                        currency: "USD"
+                    })}
+                </div>
+
+                <ProgressBar value={50} max_value={100} theme={budget.theme} />
+
+                <div className="flex">
+                    <div className="flex flex-1 gap-[1.6rem]">
+                        <span
+                            className={"block h-full w-[.4rem] rounded-[.8rem]"}
+                            style={{ backgroundColor: budget.theme }}
+                        ></span>
+                        <div className="flex flex-col">
+                            <span className="text-preset_5 text-grey-500">
+                                Spent
+                            </span>
+                            <span className="text-preset_4_bold text-grey-900">
+                                {budget.spend.toLocaleString("en-US", {
+                                    style: "currency",
+                                    currency: "USD"
+                                })}
+                            </span>
+                        </div>
+                    </div>
+                    <div className="flex flex-1 gap-[1.6rem]">
+                        <span
+                            className={
+                                "block h-full w-[.4rem] rounded-[.8rem] bg-beige-100"
+                            }
+                        ></span>
+                        <div className="flex flex-col">
+                            <span className="text-preset_5 text-grey-500">
+                                Spent
+                            </span>
+                            <span className="text-preset_4_bold text-grey-900">
+                                {budget.spend.toLocaleString("en-US", {
+                                    style: "currency",
+                                    currency: "USD"
+                                })}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="rounded-[1.2rem] bg-beige-100 p-[1.6rem]">
+                <div className="flex items-center justify-between">
+                    <h3 className="text-preset_3 text-grey-900">
+                        Latest Spending
+                    </h3>
+                    <Link
+                        href="/pots"
+                        className="flex items-center gap-[1.2rem] text-preset_4 text-grey-500"
+                    >
+                        See All{" "}
+                        <CaretRightIcon className="size-[1rem] fill-grey-500" />
+                    </Link>
+                </div>
+                <div className="flex flex-col gap-[1.6rem] divide-y divide-grey-100 *:pt-[1.6rem]">
+                    {budget.latest_spending.map((spending) => (
+                        <div
+                            key={spending.id}
+                            className="flex items-center justify-between"
+                        >
+                            <div className="text-preset_5_bold text-grey-900">
+                                {spending.name}
+                            </div>
+                            <div className="flex flex-col text-right">
+                                <span className="text-preset_5_bold text-grey-900">
+                                    -
+                                    {spending.amount.toLocaleString("en-US", {
+                                        style: "currency",
+                                        currency: "USD"
+                                    })}
+                                </span>
+                                <span className="text-preset_5 text-grey-500">
+                                    {moment(spending.date).format("D MMM YYYY")}
+                                </span>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default BudgetItem;
