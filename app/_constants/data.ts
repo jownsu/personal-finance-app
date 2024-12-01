@@ -479,25 +479,129 @@ export const transactions = [
 
 export const budgets = [
     {
-        category: "Entertainment",
-        maximum: 50.0,
-        theme: "#277C78"
+        id: 1,
+        theme: "#277C78",
+        name: "Entertainment",
+        maximum: 50,
+        spend: 25,
+        free: 50,
+        latest_spending: [
+            {
+                id: 1,
+                name: "Papa Software",
+                date: "2024-08-16T14:23:11Z",
+                avatar: "/images/avatars/aqua-flow-utilities.jpg.jpg",
+                amount: -10
+            },
+            {
+                id: 2,
+                name: "Quebeck Service",
+                date: "2024-08-12T14:23:11Z",
+                avatar: "/images/avatars/buzz-marketing-group.jpg",
+                amount: -5
+            },
+            {
+                id: 3,
+                name: "Romeo Cloud Service",
+                date: "2024-08-05T14:23:11Z",
+                avatar: "/images/avatars/bytewise.jpg",
+                amount: -10
+            }
+        ]
     },
     {
-        category: "Bills",
-        maximum: 750.0,
-        theme: "#82C9D7"
+        id: 2,
+        theme: "#82C9D7",
+        name: "Bills",
+        maximum: 750,
+        spend: 150,
+        free: 600,
+        latest_spending: [
+            {
+                id: 1,
+                name: "Spark Electric Solutions",
+                date: "2024-08-16T14:23:11Z",
+                avatar: "/images/avatars/ecofuel-energy.jpg",
+                amount: -100
+            },
+            {
+                id: 2,
+                name: "Rina Sato",
+                date: "2024-08-12T14:23:11Z",
+                avatar: "/images/avatars/elevate-education.jpg",
+                amount: -50
+            },
+            {
+                id: 3,
+                name: "Aqua Flow Utilities",
+                date: "2024-08-05T14:23:11Z",
+                avatar: "/images/avatars/flavor-fiesta.jpg",
+                amount: -100
+            }
+        ]
     },
     {
-        category: "Dining Out",
-        maximum: 75.0,
-        theme: "#F2CDAC"
+        id: 3,
+        theme: "#F2CDAC",
+        name: "Dining Out",
+        maximum: 75,
+        spend: 133.75,
+        free: 0,
+        latest_spending: [
+            {
+                id: 1,
+                name: "Savory Bites Bistro",
+                date: "2024-08-16T14:23:11Z",
+                avatar: "/images/avatars/green-plate-eatery.jpg",
+                amount: -55.50
+            },
+            {
+                id: 2,
+                name: "Ethan Clark",
+                date: "2024-08-12T14:23:11Z",
+                avatar: "/images/avatars/nimbus-data-storage.jpg",
+                amount: -32.50
+            },
+            {
+                id: 3,
+                name: "Ella Phillips",
+                date: "2024-08-05T14:23:11Z",
+                avatar: "/images/avatars/pixel-playground.jpg",
+                amount: -45.50
+            }
+        ]
     },
     {
-        category: "Personal Care",
-        maximum: 100.0,
-        theme: "#626070"
-    }
+        id: 4,
+        theme: "#626070",
+        name: "Personal Care",
+        maximum: 100,
+        spend: 40,
+        free: 60,
+        latest_spending: [
+            {
+                id: 1,
+                name: "William Harris",
+                date: "2024-08-16T14:23:11Z",
+                avatar: "/images/avatars/savory-bites-bistro.jpg",
+                amount: -10
+            },
+            {
+                id: 2,
+                name: "Serenity Spa & Wellness",
+                date: "2024-08-12T14:23:11Z",
+                avatar: "/images/avatars/serenity-spa-and-wellness.jpg",
+                amount: -30
+            },
+            {
+                id: 3,
+                name: "Serenity Spa & Wellness",
+                date: "2024-08-05T14:23:11Z",
+                avatar: "/images/avatars/spark-electric-solutions.jpg",
+                amount: -30
+            }
+        ]
+    },
 ];
 
 export const budgets_overview = [
