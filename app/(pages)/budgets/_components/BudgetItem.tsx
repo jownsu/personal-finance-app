@@ -112,7 +112,7 @@ const BudgetItem = () => {
                         <CaretRightIcon className="size-[1rem] fill-grey-500" />
                     </Link>
                 </div>
-                <div className="flex flex-col gap-[1.6rem] divide-y divide-grey-100 *:pt-[1.6rem]">
+                <div className="flex flex-col gap-[1.4rem] divide-y divide-grey-100 *:pt-[1.4rem]">
                     {budget.latest_spending.map((spending) => (
                         <div
                             key={spending.id}
