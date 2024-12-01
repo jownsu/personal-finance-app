@@ -490,7 +490,7 @@ export const budgets = [
                 id: 1,
                 name: "Papa Software",
                 date: "2024-08-16T14:23:11Z",
-                avatar: "/images/avatars/aqua-flow-utilities.jpg.jpg",
+                avatar: "/images/avatars/aqua-flow-utilities.jpg",
                 amount: -10
             },
             {

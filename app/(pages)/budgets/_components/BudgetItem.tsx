@@ -1,43 +1,36 @@
-import EllipsisIcon from "@/public/images/icon-ellipsis.svg";
-import ProgressBar from "./ProgressBar";
+/* REACT */
 import Link from "next/link";
-import CaretRightIcon from "@/public/images/icon-caret-right.svg";
-import moment from "moment";
 import Image from "next/image";
 
-const budget = {
-    id: 1,
-    theme: "#277C78",
-    name: "Entertainment",
-    maximum: 50,
-    spend: 25,
-    free: 50,
-    latest_spending: [
-        {
-            id: 1,
-            name: "Papa Software",
-            date: "08-16-2024",
-            avatar: "/images/avatars/bytewise.jpg",
-            amount: 10
-        },
-        {
-            id: 2,
-            name: "Quebeck Service",
-            date: "08-12-2024",
-            avatar: "/images/avatars/bytewise.jpg",
-            amount: 5
-        },
-        {
-            id: 3,
-            name: "Romeo Cloud Service",
-            date: "08-05-2024",
-            avatar: "/images/avatars/bytewise.jpg",
-            amount: 10
-        }
-    ]
-};
+/* COMPONENTS */
+import ProgressBar from "./ProgressBar";
 
-const BudgetItem = () => {
+/* ICONS */
+import EllipsisIcon from "@/public/images/icon-ellipsis.svg";
+import CaretRightIcon from "@/public/images/icon-caret-right.svg";
+
+/* PLUGINS */
+import moment from "moment";
+
+interface Props {
+    budget: {
+        id: number;
+        theme: string;
+        name: string;
+        maximum: number;
+        spend: number;
+        free: number;
+        latest_spending: {
+            id: number;
+            name: string;
+            date: string;
+            avatar: string;
+            amount: number;
+        }[];
+    };
+}
+
+const BudgetItem = ({ budget }: Props) => {
     return (
         <div className="flex flex-col gap-[2rem] rounded-[1.2rem] bg-white px-[2rem] py-[2.4rem] md:p-[3.2rem]">
             <div className="flex items-center gap-[1.6rem]">
@@ -46,7 +39,7 @@ const BudgetItem = () => {
                     style={{ backgroundColor: budget.theme }}
                 ></span>
                 <h2 className="mr-auto text-preset_2 text-grey-900">
-                    Entertainment
+                    {budget.name}
                 </h2>
                 <button type="button" aria-label="budget action">
                     <EllipsisIcon />
@@ -62,7 +55,11 @@ const BudgetItem = () => {
                     })}
                 </div>
 
-                <ProgressBar value={50} max_value={100} theme={budget.theme} />
+                <ProgressBar
+                    value={budget.spend}
+                    max_value={budget.maximum}
+                    theme={budget.theme}
+                />
 
                 <div className="flex">
                     <div className="flex flex-1 gap-[1.6rem]">
@@ -90,10 +87,10 @@ const BudgetItem = () => {
                         ></span>
                         <div className="flex flex-col">
                             <span className="text-preset_5 text-grey-500">
-                                Spent
+                                Free
                             </span>
                             <span className="text-preset_4_bold text-grey-900">
-                                {budget.spend.toLocaleString("en-US", {
+                                {budget.free.toLocaleString("en-US", {
                                     style: "currency",
                                     currency: "USD"
                                 })}
@@ -122,19 +119,18 @@ const BudgetItem = () => {
                             key={spending.id}
                             className="flex items-center justify-between"
                         >
-                            <div className="text-preset_5_bold text-grey-900 flex items-center gap-[1.6rem]">
-                                <Image 
+                            <div className="flex items-center gap-[1.6rem] text-preset_5_bold text-grey-900">
+                                <Image
                                     src={spending.avatar}
                                     alt={`logo of ${spending.name}`}
                                     width={32}
                                     height={32}
                                     className="size-[3.2rem] rounded-full"
-                                />                                
+                                />
                                 <span>{spending.name}</span>
                             </div>
                             <div className="flex flex-col text-right">
                                 <span className="text-preset_5_bold text-grey-900">
-                                    -
                                     {spending.amount.toLocaleString("en-US", {
                                         style: "currency",
                                         currency: "USD"
