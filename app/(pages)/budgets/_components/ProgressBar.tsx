@@ -8,7 +8,7 @@ const ProgressBar = ({ value, max_value, theme }: Props) => {
     const percentage = (value / max_value) * 100;
 
     return (
-        <div className="h-[2.4rem] w-full rounded-[.4rem] p-[.4rem] bg-beige-100 flex">
+        <div className="h-[2.4rem] md:h-[3.2rem] w-full rounded-[.4rem] p-[.4rem] bg-beige-100 flex">
             <div
                 className="rounded-[.4rem]"
                 style={{
