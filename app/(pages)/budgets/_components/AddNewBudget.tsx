@@ -65,7 +65,7 @@ const AddNewBudget = () => {
                 </Button>
             </DialogTrigger>
             <DialogContent>
-                <DialogHeader className="mb-[1.8rem]">
+                <DialogHeader className="mb-[1.8rem] md:mb-[2rem]">
                     <DialogTitle>Add New Budget</DialogTitle>
                     <DialogDescription>
                         Choose a category to set a spending budget. These
