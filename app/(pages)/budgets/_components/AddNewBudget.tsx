@@ -66,7 +66,7 @@ const AddNewBudget = () => {
             </DialogTrigger>
             <DialogContent>
                 <DialogHeader className="mb-[1.8rem]">
-                    <DialogTitle>Add New Budget?</DialogTitle>
+                    <DialogTitle>Add New Budget</DialogTitle>
                     <DialogDescription>
                         Choose a category to set a spending budget. These
                         categories can help you monitor spending.
