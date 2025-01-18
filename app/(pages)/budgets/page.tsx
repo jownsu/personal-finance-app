@@ -1,7 +1,8 @@
 /* COMPONENTS */
 import Doughnut from "@/app/_components/Doughnut";
-import Button from "@/app/_components/ui/Button";
 import BudgetItem from "./_components/BudgetItem";
+import AddNewBudget from "./_components/AddNewBudget";
+
 
 /* DATA */
 import {
@@ -15,12 +16,7 @@ const BudgetPage = () => {
         <div className="container flex flex-col gap-[3.2rem] pb-[7.6rem] pt-[2.4rem] md:pb-[5.4rem] md:pt-[3.2rem] lg:pb-[3.2rem]">
             <div className="flex items-center justify-between">
                 <h1 className="text-preset_1">Budgets</h1>
-                <Button
-                    type="button"
-                    className="px-[1.6rem] !text-preset_4_bold"
-                >
-                    + Add New Budget
-                </Button>
+                <AddNewBudget />
             </div>
 
             <div className="flex flex-col gap-[2.4rem] lg:flex-row lg:items-start">
