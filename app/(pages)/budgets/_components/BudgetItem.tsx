@@ -1,13 +1,19 @@
 /* REACT */
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 /* COMPONENTS */
 import ProgressBar from "./ProgressBar";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger
+} from "@/app/_components/ui/DropdownMenu";
 
 /* ICONS */
-import EllipsisIcon from "@/public/images/icon-ellipsis.svg";
 import CaretRightIcon from "@/public/images/icon-caret-right.svg";
+import EllipsisIcon from "@/public/images/icon-ellipsis.svg";
 
 /* PLUGINS */
 import moment from "moment";
@@ -41,9 +47,19 @@ const BudgetItem = ({ budget }: Props) => {
                 <h2 className="mr-auto text-preset_2 text-grey-900">
                     {budget.name}
                 </h2>
-                <button type="button" aria-label="budget action">
-                    <EllipsisIcon />
-                </button>
+                <DropdownMenu>
+                    <DropdownMenuTrigger>
+                        <EllipsisIcon />
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                        <DropdownMenuItem className="text-grey-900">
+                            Edit Budget
+                        </DropdownMenuItem>
+                        <DropdownMenuItem className="text-red">
+                            Delete Budget
+                        </DropdownMenuItem>
+                    </DropdownMenuContent>
+                </DropdownMenu>
             </div>
 
             <div className="flex flex-col gap-[1.6rem]">
