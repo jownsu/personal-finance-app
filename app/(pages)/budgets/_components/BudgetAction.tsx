@@ -18,12 +18,14 @@ import { EllipsisIcon } from "lucide-react";
 import { Budget } from "@/app/_constants/entities";
 
 interface Props {
-    budget: Budget
+    budget: Budget;
 }
 
 const BudgetAction = ({ budget }: Props) => {
     const setModal = useBudgetStore((state) => state.setModal);
-    const setSelectedBudget = useBudgetStore((state) => state.setSelectedBudget);
+    const setSelectedBudget = useBudgetStore(
+        (state) => state.setSelectedBudget
+    );
 
     return (
         <DropdownMenu modal={false}>
@@ -40,7 +42,13 @@ const BudgetAction = ({ budget }: Props) => {
                 >
                     Edit Budget
                 </DropdownMenuItem>
-                <DropdownMenuItem className="text-red">
+                <DropdownMenuItem
+                    className="text-red"
+                    onClick={() => {
+                        setModal("delete_budget", true);
+                        setSelectedBudget(budget);
+                    }}
+                >
                     Delete Budget
                 </DropdownMenuItem>
             </DropdownMenuContent>

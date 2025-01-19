@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { Budget } from "../_constants/entities";
 
 interface Modals {
-    add_budget: boolean;
+    delete_budget: boolean;
     edit_budget: boolean;
 }
 
@@ -15,7 +15,7 @@ interface BudgetStore {
 
 const useBudgetStore = create<BudgetStore>()((set) => ({
     modal: {
-        add_budget: false,
+        delete_budget: false,
         edit_budget: false
     },
     selected_budget: null,

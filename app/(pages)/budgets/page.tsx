@@ -3,6 +3,7 @@ import Doughnut from "@/app/_components/Doughnut";
 import BudgetItem from "./_components/BudgetItem";
 import AddBudgetModal from "./_components/AddBudgetModal";
 import EditBudgetModal from "./_components/EditBudgetModal";
+import DeleteBudgetModal from "./_components/DeleteBudgetModal";
 
 
 /* DATA */
@@ -91,6 +92,7 @@ const BudgetPage = () => {
                 </div>
             </div>
             <EditBudgetModal />
+            <DeleteBudgetModal />
         </>
     );
 };
