@@ -36,12 +36,15 @@ import { BudgetOption } from "@/app/_constants/entities";
 
 /* UTILITIES */
 import { cn } from "@/app/_utils/helpers";
+import { ChangeEvent } from "react";
 
 const AddBudgetModal = () => {
     const {
         register,
         control,
         handleSubmit,
+        setValue,
+        watch,
         formState: { errors }
     } = useForm<BudgetForm>({
         resolver: zodResolver(budget_form_schema),
@@ -52,6 +55,14 @@ const AddBudgetModal = () => {
 
     const onSubmit = (data: BudgetForm) => {
         console.log(data);
+    };
+
+    const onMaximumSpendingChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const input_value = event.target.value;
+
+        if (/^\d*$/.test(input_value)) {
+            setValue("maximum_spending", +input_value);
+        }
     };
 
     return (
@@ -137,9 +148,13 @@ const AddBudgetModal = () => {
                                 <span>$</span>
                                 <input
                                     type="text"
-                                    className="h-full text-grey-900 outline-none"
+                                    className="h-full w-full text-grey-900 outline-none"
                                     placeholder="e.g. 2000"
                                     {...register("maximum_spending")}
+                                    onChange={(event) => {
+                                        onMaximumSpendingChange(event);
+                                    }}
+                                    value={watch("maximum_spending") || ""}
                                 />
                             </div>
                             {errors.maximum_spending && (
