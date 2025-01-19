@@ -2,6 +2,7 @@ import { z } from "zod";
 import { BudgetOption, ColorOption } from "../entities";
 
 export const budget_form_schema = z.object({
+    id: z.number().optional(),
 	budget_category: z.nativeEnum(BudgetOption),
 	maximum_spending: z.preprocess(
         (value) => parseInt(z.string().parse(value)),

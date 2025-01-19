@@ -4,40 +4,21 @@ import Link from "next/link";
 
 /* COMPONENTS */
 import ProgressBar from "./ProgressBar";
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger
-} from "@/app/_components/ui/DropdownMenu";
+import BudgetAction from "./BudgetAction";
+
 
 /* ICONS */
 import CaretRightIcon from "@/public/images/icon-caret-right.svg";
-import EllipsisIcon from "@/public/images/icon-ellipsis.svg";
 
 /* PLUGINS */
 import moment from "moment";
 
 /* CONSTANTS */
-import { BudgetOption, ColorOption } from "@/app/_constants/entities";
 import { BUDGET_LABELS, COLORS_VALUE } from "@/app/_constants/constants";
+import { Budget } from "@/app/_constants/entities";
 
 interface Props {
-    budget: {
-        id: number;
-        budget_option: BudgetOption;
-        color: ColorOption;
-        maximum: number;
-        spend: number;
-        free: number;
-        latest_spending: {
-            id: number;
-            name: string;
-            date: string;
-            avatar: string;
-            amount: number;
-        }[];
-    };
+    budget: Budget;
 }
 
 const BudgetItem = ({ budget }: Props) => {
@@ -51,19 +32,7 @@ const BudgetItem = ({ budget }: Props) => {
                 <h2 className="mr-auto text-preset_2 text-grey-900">
                     {BUDGET_LABELS[budget.budget_option]}
                 </h2>
-                <DropdownMenu>
-                    <DropdownMenuTrigger>
-                        <EllipsisIcon />
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent>
-                        <DropdownMenuItem className="text-grey-900">
-                            Edit Budget
-                        </DropdownMenuItem>
-                        <DropdownMenuItem className="text-red">
-                            Delete Budget
-                        </DropdownMenuItem>
-                    </DropdownMenuContent>
-                </DropdownMenu>
+                <BudgetAction budget={budget} />
             </div>
 
             <div className="flex flex-col gap-[1.6rem]">

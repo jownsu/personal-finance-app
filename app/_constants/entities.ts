@@ -28,3 +28,19 @@ export enum ColorOption {
     Gold = "14",
     Orange = "15"
 }
+
+export interface Budget {
+    id: number;
+    budget_option: BudgetOption;
+    color: ColorOption;
+    maximum: number;
+    spend: number;
+    free: number;
+    latest_spending: {
+        id: number;
+        name: string;
+        date: string;
+        avatar: string;
+        amount: number;
+    }[];
+};
