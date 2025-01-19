@@ -31,7 +31,7 @@ import {
     budget_form_schema,
     BudgetForm
 } from "@/app/_constants/_schema/budget.schema";
-import { budget_options, color_tag_options } from "@/app/_constants/constants";
+import { BUDGET_OPTIONS, COLOR_TAG_OPTIONS } from "@/app/_constants/constants";
 import { BudgetOption } from "@/app/_constants/entities";
 
 /* UTILITIES */
@@ -103,7 +103,7 @@ const AddNewBudget = () => {
                                                 e.stopPropagation()
                                             }
                                         >
-                                            {Object.values(budget_options).map(
+                                            {Object.values(BUDGET_OPTIONS).map(
                                                 (budget) => (
                                                     <SelectItem
                                                         key={budget.value}
@@ -186,7 +186,7 @@ const AddNewBudget = () => {
                                             }
                                         >
                                             {Object.values(
-                                                color_tag_options
+                                                COLOR_TAG_OPTIONS
                                             ).map((color) => (
                                                 <SelectItem
                                                     key={color.value}

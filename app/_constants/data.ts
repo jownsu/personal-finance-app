@@ -1,3 +1,5 @@
+import { BudgetOption, ColorOption } from "./entities";
+
 export const balance = {
     current: 4836.0,
     income: 3814.25,
@@ -480,8 +482,8 @@ export const transactions = [
 export const budgets = [
     {
         id: 1,
-        theme: "#277C78",
-        name: "Entertainment",
+        budget_option: BudgetOption.Entertainment,
+        color: ColorOption.Green,
         maximum: 50,
         spend: 25,
         free: 50,
@@ -511,8 +513,8 @@ export const budgets = [
     },
     {
         id: 2,
-        theme: "#82C9D7",
-        name: "Bills",
+        budget_option: BudgetOption.Bills,
+        color: ColorOption.Cyan,
         maximum: 750,
         spend: 150,
         free: 600,
@@ -542,8 +544,8 @@ export const budgets = [
     },
     {
         id: 3,
-        theme: "#F2CDAC",
-        name: "Dining Out",
+        budget_option: BudgetOption.DiningOut,
+        color: ColorOption.Yellow,
         maximum: 75,
         spend: 133.75,
         free: 0,
@@ -573,8 +575,8 @@ export const budgets = [
     },
     {
         id: 4,
-        theme: "#626070",
-        name: "Personal Care",
+        budget_option: BudgetOption.PersonalCare,
+        color: ColorOption.Navy,
         maximum: 100,
         spend: 40,
         free: 60,

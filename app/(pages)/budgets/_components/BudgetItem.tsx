@@ -18,11 +18,15 @@ import EllipsisIcon from "@/public/images/icon-ellipsis.svg";
 /* PLUGINS */
 import moment from "moment";
 
+/* CONSTANTS */
+import { BudgetOption, ColorOption } from "@/app/_constants/entities";
+import { BUDGET_LABELS, COLORS_VALUE } from "@/app/_constants/constants";
+
 interface Props {
     budget: {
         id: number;
-        theme: string;
-        name: string;
+        budget_option: BudgetOption;
+        color: ColorOption;
         maximum: number;
         spend: number;
         free: number;
@@ -42,10 +46,10 @@ const BudgetItem = ({ budget }: Props) => {
             <div className="flex items-center gap-[1.6rem]">
                 <span
                     className="block size-[1.6rem] rounded-full"
-                    style={{ backgroundColor: budget.theme }}
+                    style={{ backgroundColor: COLORS_VALUE[budget.color] }}
                 ></span>
                 <h2 className="mr-auto text-preset_2 text-grey-900">
-                    {budget.name}
+                    {BUDGET_LABELS[budget.budget_option]}
                 </h2>
                 <DropdownMenu>
                     <DropdownMenuTrigger>
@@ -74,14 +78,16 @@ const BudgetItem = ({ budget }: Props) => {
                 <ProgressBar
                     value={budget.spend}
                     max_value={budget.maximum}
-                    theme={budget.theme}
+                    theme={COLORS_VALUE[budget.color]}
                 />
 
                 <div className="flex">
                     <div className="flex flex-1 gap-[1.6rem]">
                         <span
                             className={"block h-full w-[.4rem] rounded-[.8rem]"}
-                            style={{ backgroundColor: budget.theme }}
+                            style={{
+                                backgroundColor: COLORS_VALUE[budget.color]
+                            }}
                         ></span>
                         <div className="flex flex-col">
                             <span className="text-preset_5 text-grey-500">
