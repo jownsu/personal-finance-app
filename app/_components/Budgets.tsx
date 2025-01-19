@@ -17,7 +17,7 @@ const Budgets = () => {
                     href="/budgets"
                     className="flex items-center gap-[1.2rem] text-preset_4 text-grey-500"
                 >
-                    See Details <CaretRightIcon className="size-[1rem]" />
+                    See Details <CaretRightIcon className="size-[1rem] fill-grey-500" />
                 </Link>
             </div>
 

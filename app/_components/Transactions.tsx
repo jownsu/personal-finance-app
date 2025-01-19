@@ -17,7 +17,7 @@ const Transactions = () => {
                     href="/transactions"
                     className="flex items-center gap-[1.2rem] text-preset_4 text-grey-500"
                 >
-                    View All <CaretRightIcon className="size-[1rem]" />
+                    View All <CaretRightIcon className="size-[1rem] fill-grey-500" />
                 </Link>
             </div>
             <ul className="flex flex-col gap-[2rem] divide-y divide-grey-100 *:pt-[2rem]">

@@ -17,7 +17,7 @@ const Pots = () => {
                     href="/pots"
                     className="flex items-center gap-[1.2rem] text-grey-500 text-preset_4"
                 >
-                    See Details <CaretRightIcon className="size-[1rem]" />
+                    See Details <CaretRightIcon className="size-[1rem] fill-grey-500" />
                 </Link>
             </div>
 
