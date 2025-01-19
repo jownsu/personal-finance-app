@@ -1,8 +1,5 @@
 "use client";
 
-/* NEXT */
-import { ChangeEvent, useEffect } from "react";
-
 /* COMPONENTS */
 import Button from "@/app/_components/ui/Button";
 import {
@@ -10,7 +7,8 @@ import {
     DialogContent,
     DialogDescription,
     DialogHeader,
-    DialogTitle
+    DialogTitle,
+    DialogTrigger
 } from "@/app/_components/ui/Dialog";
 import {
     Select,
@@ -22,14 +20,11 @@ import {
 } from "@/app/_components/ui/Select";
 
 /* PLUGINS */
+import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Controller, useForm } from "react-hook-form";
 
 /* ICONS */
 import CaretDown from "@/public/images/icon-caret-down.svg";
-
-/* STORE */
-import useBudgetStore from "@/app/_store/budget.store";
 
 /* CONSTANTS */
 import {
@@ -42,24 +37,16 @@ import { BudgetOption } from "@/app/_constants/entities";
 /* UTILITIES */
 import { cn } from "@/app/_utils/helpers";
 
-const EditBudget = () => {
-    const modal = useBudgetStore((state) => state.modal);
-    const setModal = useBudgetStore((state) => state.setModal);
-    const selected_budget = useBudgetStore((state) => state.selected_budget);
-
+const AddBudgetModal = () => {
     const {
         register,
         control,
         handleSubmit,
-        reset,
-        setValue,
-        watch,
         formState: { errors }
     } = useForm<BudgetForm>({
         resolver: zodResolver(budget_form_schema),
         defaultValues: {
-            budget_category: BudgetOption.Entertainment,
-            maximum_spending: 0
+            budget_category: BudgetOption.Entertainment
         }
     });
 
@@ -67,34 +54,22 @@ const EditBudget = () => {
         console.log(data);
     };
 
-    const onMaximumSpendingChange = (event: ChangeEvent<HTMLInputElement>) => {
-        const input_value = event.target.value;
-
-        if (/^\d*$/.test(input_value)) {
-            setValue("maximum_spending", +input_value);
-        }
-    };
-
-    useEffect(() => {
-        reset({
-            id: selected_budget?.id,
-            budget_category: selected_budget?.budget_option,
-            maximum_spending: selected_budget?.maximum,
-            color_tag: selected_budget?.color
-        });
-    }, [reset, selected_budget]);
-
     return (
-        <Dialog
-            open={modal.edit_budget}
-            onOpenChange={(open) => setModal("edit_budget", open)}
-        >
+        <Dialog>
+            <DialogTrigger asChild>
+                <Button
+                    type="button"
+                    className="px-[1.6rem] !text-preset_4_bold"
+                >
+                    + Add New Budget
+                </Button>
+            </DialogTrigger>
             <DialogContent>
                 <DialogHeader className="mb-[1.8rem] md:mb-[2rem]">
-                    <DialogTitle>Edit Budget</DialogTitle>
+                    <DialogTitle>Add New Budget</DialogTitle>
                     <DialogDescription>
-                        As your budgets change, feel free to update your
-                        spending limits.
+                        Choose a category to set a spending budget. These
+                        categories can help you monitor spending.
                     </DialogDescription>
                 </DialogHeader>
 
@@ -162,13 +137,9 @@ const EditBudget = () => {
                                 <span>$</span>
                                 <input
                                     type="text"
-                                    className="h-full w-full text-grey-900 outline-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                                    className="h-full text-grey-900 outline-none"
                                     placeholder="e.g. 2000"
                                     {...register("maximum_spending")}
-                                    onChange={(event) => {
-                                        onMaximumSpendingChange(event);
-                                    }}
-                                    value={watch("maximum_spending") || ""}
                                 />
                             </div>
                             {errors.maximum_spending && (
@@ -248,7 +219,7 @@ const EditBudget = () => {
                     </div>
 
                     <Button className="w-full" type="submit">
-                        Save Changes
+                        Add Budget
                     </Button>
                 </form>
             </DialogContent>
@@ -256,4 +227,4 @@ const EditBudget = () => {
     );
 };
 
-export default EditBudget;
+export default AddBudgetModal;

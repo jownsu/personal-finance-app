@@ -1,8 +1,8 @@
 /* COMPONENTS */
 import Doughnut from "@/app/_components/Doughnut";
 import BudgetItem from "./_components/BudgetItem";
-import AddNewBudget from "./_components/AddNewBudget";
-import EditBudget from "./_components/EditBudget";
+import AddBudgetModal from "./_components/AddBudgetModal";
+import EditBudgetModal from "./_components/EditBudgetModal";
 
 
 /* DATA */
@@ -18,7 +18,7 @@ const BudgetPage = () => {
             <div className="container flex flex-col gap-[3.2rem] pb-[7.6rem] pt-[2.4rem] md:pb-[5.4rem] md:pt-[3.2rem] lg:pb-[3.2rem]">
                 <div className="flex items-center justify-between">
                     <h1 className="text-preset_1">Budgets</h1>
-                    <AddNewBudget />
+                    <AddBudgetModal />
                 </div>
 
                 <div className="flex flex-col gap-[2.4rem] lg:flex-row lg:items-start">
@@ -90,7 +90,7 @@ const BudgetPage = () => {
                     </div>
                 </div>
             </div>
-            <EditBudget />
+            <EditBudgetModal />
         </>
     );
 };
