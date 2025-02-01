@@ -27,7 +27,7 @@ const PotItem = ({ pot }: Props) => {
                 <h2 className="mr-auto text-preset_2 text-grey-900">
                     {pot.name}
                 </h2>
-                <PotAction />
+                <PotAction pot={pot} />
             </div>
 
             <div className="flex flex-col gap-[1.6rem]">

@@ -8,7 +8,7 @@ export const pot_form_schema = z.object({
         (value) => parseInt(z.string().parse(value)),
         z.number({ message: "Please enter target" }).min(0, "Please enter target")
     ),
-	theme: z.nativeEnum(ColorOption, { message: "Please select color tag" } ),
+	color: z.nativeEnum(ColorOption, { message: "Please select color tag" } ),
 });
 
 export type PotForm = z.infer<typeof pot_form_schema>;

@@ -1,7 +1,7 @@
 "use client";
 
 /* REACT */
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 
 /* COMPONENTS */
 import Button from "@/app/_components/ui/Button";
@@ -10,9 +10,10 @@ import {
     DialogContent,
     DialogDescription,
     DialogHeader,
-    DialogTitle,
-    DialogTrigger
+    DialogTitle
 } from "@/app/_components/ui/Dialog";
+import { Input } from "@/app/_components/ui/Input";
+import { Label } from "@/app/_components/ui/Label";
 import {
     Select,
     SelectContent,
@@ -21,8 +22,6 @@ import {
     SelectTrigger,
     SelectValue
 } from "@/app/_components/ui/Select";
-import { Input } from "@/app/_components/ui/Input";
-import { Label } from "@/app/_components/ui/Label";
 
 /* PLUGINS */
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -34,6 +33,9 @@ import CaretDown from "@/public/images/icon-caret-down.svg";
 /* CONSTANTS */
 import { COLOR_TAG_OPTIONS } from "@/app/_constants/constants";
 
+/* STORE */
+import usePotStore from "@/app/_store/pot.store";
+
 /* SCHEMA */
 import { pot_form_schema, PotForm } from "@/app/_constants/_schema/pot.schema";
 
@@ -42,13 +44,18 @@ import { cn } from "@/app/_utils/helpers";
 
 const MAX_POT_NAME_LENGTH = 30;
 
-const AddPotModal = () => {
+const EditPotModal = () => {
+    const modal = usePotStore((state) => state.modal);
+    const setModal = usePotStore((state) => state.setModal);
+    const selected_pot = usePotStore((state) => state.selected_pot);
+
     const {
         register,
         control,
         handleSubmit,
         setValue,
         watch,
+        reset,
         formState: { errors }
     } = useForm<PotForm>({
         resolver: zodResolver(pot_form_schema)
@@ -68,22 +75,27 @@ const AddPotModal = () => {
         }
     };
 
+    useEffect(() => {
+        reset({
+            id: selected_pot?.id,
+            name: selected_pot?.name,
+            target: selected_pot?.target,
+            color: selected_pot?.color
+        });
+        setPotName(selected_pot?.name || "");
+    }, [reset, selected_pot]);
+
     return (
-        <Dialog>
-            <DialogTrigger asChild>
-                <Button
-                    type="button"
-                    className="px-[1.6rem] !text-preset_4_bold"
-                >
-                    + Add New Pot
-                </Button>
-            </DialogTrigger>
+        <Dialog
+            open={modal.edit_pot}
+            onOpenChange={(open) => setModal("edit_pot", open)}
+        >
             <DialogContent>
                 <DialogHeader className="mb-[1.8rem] md:mb-[2rem]">
-                    <DialogTitle>Add New Pot</DialogTitle>
+                    <DialogTitle>Edit Pot</DialogTitle>
                     <DialogDescription>
-                        Create a pot to set savings targets. These can help keep
-                        you on track as you save for special purchases.
+                        If your saving targets change, feel free to update your
+                        pots.
                     </DialogDescription>
                 </DialogHeader>
 
@@ -224,7 +236,7 @@ const AddPotModal = () => {
                         className="w-full !text-preset_4_bold"
                         type="submit"
                     >
-                        Add Pot
+                        Save Changes
                     </Button>
                 </form>
             </DialogContent>
@@ -232,4 +244,4 @@ const AddPotModal = () => {
     );
 };
 
-export default AddPotModal;
+export default EditPotModal;

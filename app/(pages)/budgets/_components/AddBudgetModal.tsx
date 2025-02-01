@@ -1,5 +1,8 @@
 "use client";
 
+/* REACT */
+import { ChangeEvent } from "react";
+
 /* COMPONENTS */
 import Button from "@/app/_components/ui/Button";
 import {
@@ -26,17 +29,18 @@ import { zodResolver } from "@hookform/resolvers/zod";
 /* ICONS */
 import CaretDown from "@/public/images/icon-caret-down.svg";
 
-/* CONSTANTS */
+/* SCHEMA */
 import {
     budget_form_schema,
     BudgetForm
 } from "@/app/_constants/_schema/budget.schema";
+
+/* CONSTANTS */
 import { BUDGET_OPTIONS, COLOR_TAG_OPTIONS } from "@/app/_constants/constants";
 import { BudgetOption } from "@/app/_constants/entities";
 
 /* UTILITIES */
 import { cn } from "@/app/_utils/helpers";
-import { ChangeEvent } from "react";
 
 const AddBudgetModal = () => {
     const {
