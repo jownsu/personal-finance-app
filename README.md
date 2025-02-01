@@ -1,10 +1,12 @@
 # Frontend Mentor - Personal finance app
 
-# Budget page
+# Pots Page
 
 ## TODO:
-
-- [x] Implement UI/UX of add new budget modal. (RWD)
-- [x] Implement dropdown options of budget item.
-- [x] Implement UI/UX of edit budget modal. (RWD)
-- [x] Implement UI/UX of delete budget modal. (RWD)
+- [] Implement UI/UX of pots page. (RWD)
+- [] Implement UI/UX of add new pot modal. (RWD)
+- [] Implement dropdown options of pot item.
+- [] Implement UI/UX of edit pot modal. (RWD)
+- [] Implement UI/UX of delete pot modal. (RWD)
+- [] Implement UI/UX of add money modal from pot item. (RWD)
+- [] Implement UI/UX of withdraw modal from pot item. (RWD)
