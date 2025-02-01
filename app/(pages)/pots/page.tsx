@@ -14,7 +14,7 @@ const PotsPage = () => {
                     <AddPotModal />
                 </div>
 
-                <div className="flex flex-col gap-[2.4rem]">
+                <div className="grid gap-[2.4rem] md:grid-cols-2">
                     {pots.map((pot) => (
                         <PotItem key={pot.id} pot={pot} />
                     ))}

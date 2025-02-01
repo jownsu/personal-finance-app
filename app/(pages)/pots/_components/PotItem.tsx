@@ -18,7 +18,7 @@ interface Props {
 
 const PotItem = ({ pot }: Props) => {
     return (
-        <div className="flex flex-col gap-[4.3rem] rounded-[1.2rem] bg-white px-[2rem] pb-[3.8rem] pt-[2.4rem] md:px-[2.4rem]">
+        <div className="flex flex-col gap-[4.3rem] rounded-[1.2rem] bg-white px-[2rem] pb-[3.8rem] pt-[2.4rem] md:px-[2.4rem] lg:p-[2.4rem]">
             <div className="flex items-center gap-[1.6rem]">
                 <span
                     className="block size-[1.6rem] rounded-full"
