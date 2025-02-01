@@ -44,3 +44,11 @@ export interface Budget {
         amount: number;
     }[];
 };
+
+export interface Pot {
+    id: number,
+    name: string,
+    target: number,
+    total: number,
+    color: ColorOption
+}

@@ -12,7 +12,7 @@ import {
 import useBudgetStore from "@/app/_store/budget.store";
 
 /* PLUGINS */
-import { EllipsisIcon } from "lucide-react";
+import EllipsisIcon from "@/public/images/icon-ellipsis.svg";
 
 /* ENTITIES */
 import { Budget } from "@/app/_constants/entities";
