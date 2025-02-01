@@ -4,7 +4,7 @@
 
 ## TODO:
 - [] Implement UI/UX of pots page. (RWD)
-- [] Implement UI/UX of add new pot modal. (RWD)
+- [x] Implement UI/UX of add new pot modal. (RWD)
 - [] Implement dropdown options of pot item.
 - [] Implement UI/UX of edit pot modal. (RWD)
 - [] Implement UI/UX of delete pot modal. (RWD)

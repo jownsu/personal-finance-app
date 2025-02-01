@@ -1,5 +1,8 @@
 "use client";
 
+/* REACT */
+import { ChangeEvent, useState } from "react";
+
 /* COMPONENTS */
 import Button from "@/app/_components/ui/Button";
 import {
@@ -18,27 +21,26 @@ import {
     SelectTrigger,
     SelectValue
 } from "@/app/_components/ui/Select";
+import { Input } from "@/app/_components/ui/Input";
 
 /* PLUGINS */
-import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Controller, useForm } from "react-hook-form";
+import { Label } from "@/app/_components/ui/Label";
 
 /* ICONS */
 import CaretDown from "@/public/images/icon-caret-down.svg";
 
 /* CONSTANTS */
-import {
-    budget_form_schema,
-    BudgetForm
-} from "@/app/_constants/_schema/budget.schema";
-import { BUDGET_OPTIONS, COLOR_TAG_OPTIONS } from "@/app/_constants/constants";
-import { BudgetOption } from "@/app/_constants/entities";
+import { COLOR_TAG_OPTIONS } from "@/app/_constants/constants";
 
 /* UTILITIES */
+import { pot_form_schema, PotForm } from "@/app/_constants/_schema/pot.schema";
 import { cn } from "@/app/_utils/helpers";
-import { ChangeEvent } from "react";
 
-const AddBudgetModal = () => {
+const MAX_POT_NAME_LENGTH = 30;
+
+const AddPotModal = () => {
     const {
         register,
         control,
@@ -46,22 +48,21 @@ const AddBudgetModal = () => {
         setValue,
         watch,
         formState: { errors }
-    } = useForm<BudgetForm>({
-        resolver: zodResolver(budget_form_schema),
-        defaultValues: {
-            budget_category: BudgetOption.Entertainment
-        }
+    } = useForm<PotForm>({
+        resolver: zodResolver(pot_form_schema)
     });
 
-    const onSubmit = (data: BudgetForm) => {
+    const [pot_name, setPotName] = useState("");
+
+    const onSubmit = (data: PotForm) => {
         console.log(data);
     };
 
-    const onMaximumSpendingChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const onTargetChange = (event: ChangeEvent<HTMLInputElement>) => {
         const input_value = event.target.value;
 
         if (/^\d*$/.test(input_value)) {
-            setValue("maximum_spending", +input_value);
+            setValue("target", +input_value);
         }
     };
 
@@ -72,62 +73,47 @@ const AddBudgetModal = () => {
                     type="button"
                     className="px-[1.6rem] !text-preset_4_bold"
                 >
-                    + Add New Budget
+                    + Add New Pot
                 </Button>
             </DialogTrigger>
             <DialogContent>
                 <DialogHeader className="mb-[1.8rem] md:mb-[2rem]">
-                    <DialogTitle>Add New Budget</DialogTitle>
+                    <DialogTitle>Add New Pot</DialogTitle>
                     <DialogDescription>
-                        Choose a category to set a spending budget. These
-                        categories can help you monitor spending.
+                        Create a pot to set savings targets. These can help keep
+                        you on track as you save for special purchases.
                     </DialogDescription>
                 </DialogHeader>
 
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-[2rem] flex flex-col gap-[1.6rem]">
                         <div className="flex flex-col gap-[.4rem]">
-                            <label
-                                htmlFor="budget_category"
-                                className="text-preset_5_bold text-grey-500"
-                            >
-                                Budget Category
-                            </label>
-                            <Controller
-                                control={control}
-                                name="budget_category"
-                                render={({ field: { onChange, value } }) => (
-                                    <Select
-                                        onValueChange={onChange}
-                                        value={value}
-                                    >
-                                        <SelectTrigger className="h-[4.5rem] w-full rounded-[.8rem] border border-beige-500 px-[2rem] !text-preset_4 text-grey-900">
-                                            <SelectValue />
-                                            <SelectIcon asChild>
-                                                <CaretDown />
-                                            </SelectIcon>
-                                        </SelectTrigger>
-                                        <SelectContent
-                                            className="!pointer-events-auto"
-                                            onWheel={(e) => e.stopPropagation()}
-                                            onTouchMove={(e) =>
-                                                e.stopPropagation()
-                                            }
-                                        >
-                                            {Object.values(BUDGET_OPTIONS).map(
-                                                (budget) => (
-                                                    <SelectItem
-                                                        key={budget.value}
-                                                        value={budget.value}
-                                                    >
-                                                        {budget.label}
-                                                    </SelectItem>
-                                                )
-                                            )}
-                                        </SelectContent>
-                                    </Select>
-                                )}
+                            <Label htmlFor="name">Pot Name</Label>
+                            <Input
+                                className="text-preset_4"
+                                type="text"
+                                id="name"
+                                {...register("name")}
+                                value={pot_name}
+                                onChange={(event) => {
+                                    if (
+                                        event.target.value.length >
+                                        MAX_POT_NAME_LENGTH
+                                    ) {
+                                        return;
+                                    }
+                                    setPotName(event.target.value);
+                                }}
                             />
+                            {errors.name && (
+                                <span className="text-end text-preset_5 text-grey-500">
+                                    {errors.name.message}
+                                </span>
+                            )}
+                            <span className="text-right text-preset_5 text-grey-500">
+                                {MAX_POT_NAME_LENGTH - pot_name.length}{" "}
+                                characters left
+                            </span>
                         </div>
 
                         <div className="flex flex-col gap-[.4rem]">
@@ -135,13 +121,13 @@ const AddBudgetModal = () => {
                                 htmlFor="color_tag"
                                 className="text-preset_5_bold text-grey-500"
                             >
-                                Maximum Spending
+                                Target
                             </label>
                             <div
                                 className={cn(
                                     "flex h-[4.5rem] items-center gap-[1.2rem] rounded-[.8rem] border border-beige-500 px-[2rem] text-preset_4 text-beige-500",
                                     {
-                                        ["border-red"]: errors.maximum_spending
+                                        ["border-red"]: errors.target
                                     }
                                 )}
                             >
@@ -150,16 +136,16 @@ const AddBudgetModal = () => {
                                     type="text"
                                     className="h-full w-full text-grey-900 outline-none"
                                     placeholder="e.g. 2000"
-                                    {...register("maximum_spending")}
+                                    {...register("target")}
                                     onChange={(event) => {
-                                        onMaximumSpendingChange(event);
+                                        onTargetChange(event);
                                     }}
-                                    value={watch("maximum_spending") || ""}
+                                    value={watch("target") || ""}
                                 />
                             </div>
-                            {errors.maximum_spending && (
+                            {errors.target && (
                                 <p className="text-preset_4 text-red">
-                                    {errors.maximum_spending.message}
+                                    {errors.target.message}
                                 </p>
                             )}
                         </div>
@@ -173,7 +159,7 @@ const AddBudgetModal = () => {
                             </label>
                             <Controller
                                 control={control}
-                                name="color_tag"
+                                name="theme"
                                 render={({ field: { onChange, value } }) => (
                                     <Select
                                         onValueChange={onChange}
@@ -183,8 +169,7 @@ const AddBudgetModal = () => {
                                             className={cn(
                                                 "h-[4.5rem] w-full rounded-[.8rem] border border-beige-500 px-[2rem] !text-preset_4 text-grey-900",
                                                 {
-                                                    ["border-red"]:
-                                                        errors.color_tag
+                                                    ["border-red"]: errors.theme
                                                 }
                                             )}
                                         >
@@ -225,9 +210,9 @@ const AddBudgetModal = () => {
                                 )}
                             />
 
-                            {errors.color_tag && (
+                            {errors.theme && (
                                 <p className="text-preset_4 text-red">
-                                    {errors.color_tag.message}
+                                    {errors.theme.message}
                                 </p>
                             )}
                         </div>
@@ -237,7 +222,7 @@ const AddBudgetModal = () => {
                         className="w-full !text-preset_4_bold"
                         type="submit"
                     >
-                        Add Budget
+                        Add Pot
                     </Button>
                 </form>
             </DialogContent>
@@ -245,4 +230,4 @@ const AddBudgetModal = () => {
     );
 };
 
-export default AddBudgetModal;
+export default AddPotModal;
