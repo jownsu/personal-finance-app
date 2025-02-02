@@ -8,6 +8,9 @@
 - [X] Implement dropdown options of pot item.
 - [X] Implement UI/UX of edit pot modal. (RWD)
 - [X] Implement UI/UX of delete pot modal. (RWD)
-- [] Implement UI/UX of add money modal from pot item. (RWD)
+- [X] Implement UI/UX of add money modal from pot item. (RWD)
+    - [] UI/UX of maximum amount to add.
 - [] Implement UI/UX of withdraw modal from pot item. (RWD)
+    - [] UI/UX of minimum amount to add.
 - [] Refactor. use formatToUsd helper.
+- [] Refactor. Check inputs in all modals.

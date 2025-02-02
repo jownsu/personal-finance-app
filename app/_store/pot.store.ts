@@ -4,6 +4,8 @@ import { Pot } from "../_constants/entities";
 interface Modals {
     delete_pot: boolean;
     edit_pot: boolean;
+    add_money: boolean;
+    withdraw_money: boolean;
 }
 
 interface PotStore {
@@ -16,7 +18,9 @@ interface PotStore {
 const usePotStore = create<PotStore>()((set) => ({
     modal: {
         delete_pot: false,
-        edit_pot: false
+        edit_pot: false,
+        add_money: false,
+        withdraw_money: false
     },
     selected_pot: null,
     setModal: (modal, value) =>

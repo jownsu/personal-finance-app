@@ -1,4 +1,5 @@
 /* COMPONENTS */
+import AddMoneyModal from "./_components/AddMoneyModal";
 import AddPotModal from "./_components/AddPotModal";
 import DeletePotModal from "./_components/DeletePotModal";
 import EditPotModal from "./_components/EditPotModal";
@@ -24,6 +25,7 @@ const PotsPage = () => {
             </div>
             <EditPotModal />
             <DeletePotModal />
+            <AddMoneyModal />
         </>
     );
 };

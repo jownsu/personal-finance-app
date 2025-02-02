@@ -12,3 +12,13 @@ export const pot_form_schema = z.object({
 });
 
 export type PotForm = z.infer<typeof pot_form_schema>;
+
+export const add_withdraw_pot_schema = z.object({
+    id: z.number().optional(),
+	amount: z.preprocess(
+        (value) => parseInt(z.string().parse(value)),
+        z.number({ message: "Please enter amount" }).min(0, "Please enter amount")
+    ),
+});
+
+export type AddWithdrawPotSchema = z.infer<typeof add_withdraw_pot_schema>;

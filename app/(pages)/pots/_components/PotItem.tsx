@@ -1,3 +1,5 @@
+"use client";
+
 /* COMPONENTS */
 import PotAction from "./PotAction";
 import ProgressBar from "./ProgressBar";
@@ -5,6 +7,9 @@ import Button from "@/app/_components/ui/Button";
 
 /* CONSTANTS */
 import { COLORS_VALUE } from "@/app/_constants/constants";
+
+/* STORE */
+import usePotStore from "@/app/_store/pot.store";
 
 /* HELPERS */
 import { formatToUsd } from "@/app/_utils/helpers";
@@ -17,6 +22,10 @@ interface Props {
 }
 
 const PotItem = ({ pot }: Props) => {
+
+    const setModal = usePotStore((state) => state.setModal);
+    const setSelectedpot = usePotStore((state) => state.setSelectedpot);
+
     return (
         <div className="flex flex-col gap-[4.3rem] rounded-[1.2rem] bg-white px-[2rem] pb-[3.8rem] pt-[2.4rem] md:px-[2.4rem] lg:p-[2.4rem]">
             <div className="flex items-center gap-[1.6rem]">
@@ -48,10 +57,20 @@ const PotItem = ({ pot }: Props) => {
             </div>
 
             <div className="flex justify-between gap-[1.6rem] *:flex-1 *:text-preset_4_bold">
-                <Button variant="secondary" type="button">
+                <Button 
+                    variant="secondary" 
+                    type="button"
+                    onClick={() => {
+                        setModal("add_money", true);
+                        setSelectedpot(pot);
+                    }}
+                >
                     + Add Money
                 </Button>
-                <Button variant="secondary" type="button">
+                <Button 
+                    variant="secondary" 
+                    type="button"
+                >
                     Withdraw
                 </Button>
             </div>
