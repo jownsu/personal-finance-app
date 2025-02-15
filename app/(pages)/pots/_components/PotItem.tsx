@@ -70,6 +70,10 @@ const PotItem = ({ pot }: Props) => {
                 <Button 
                     variant="secondary" 
                     type="button"
+                    onClick={() => {
+                        setModal("withdraw_money", true);
+                        setSelectedpot(pot);
+                    }}
                 >
                     Withdraw
                 </Button>

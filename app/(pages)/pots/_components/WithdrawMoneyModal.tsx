@@ -13,7 +13,7 @@ import {
     DialogTitle
 } from "@/app/_components/ui/Dialog";
 import { Label } from "@/app/_components/ui/Label";
-import AddMoneyBar from "./AddMoneyBar";
+import WithdrawMoneyBar from "./WithdrawMoneyBar";
 
 /* PLUGINS */
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -31,7 +31,7 @@ import usePotStore from "@/app/_store/pot.store";
 /* UTILITIES */
 import { cn, formatToUsd } from "@/app/_utils/helpers";
 
-const AddMoneyModal = () => {
+const WithdrawMoneyModal = () => {
     const modal = usePotStore((state) => state.modal);
     const setModal = usePotStore((state) => state.setModal);
     const selected_pot = usePotStore((state) => state.selected_pot);
@@ -52,23 +52,17 @@ const AddMoneyModal = () => {
 
     const onSubmit = (data: AddWithdrawPotSchema) => {
         console.log(data);
-        setModal("add_money", false);
+        setModal("withdraw_money", false);
     };
 
     const onAmountChange = (event: ChangeEvent<HTMLInputElement>) => {
         const input_value = event.target.value;
 
         if (/^\d*$/.test(input_value)) {
-            if (
-                selected_pot &&
-                selected_pot.total + +input_value <= selected_pot.target
-            ) {
+            if (selected_pot && selected_pot.total - +input_value >= 0) {
                 setValue("amount", +input_value);
             } else {
-                setValue(
-                    "amount",
-                    (selected_pot?.target || 0) - (selected_pot?.total || 0)
-                );
+                setValue("amount", selected_pot?.total || 0);
             }
         }
     };
@@ -84,22 +78,22 @@ const AddMoneyModal = () => {
         return null;
     }
 
-    const new_amount = selected_pot.total + +watch("amount");
+    const new_amount = selected_pot.total - +watch("amount");
 
     return (
         <Dialog
-            open={modal.add_money}
-            onOpenChange={(open) => setModal("add_money", open)}
+            open={modal.withdraw_money}
+            onOpenChange={(open) => setModal("withdraw_money", open)}
         >
             <DialogContent>
                 <DialogHeader className="mb-[3rem] pr-[2rem]">
                     <DialogTitle>
-                        Add to {`'${selected_pot?.name}'`}
+                        Withdraw from {`'${selected_pot?.name}'`}
                     </DialogTitle>
                     <DialogDescription>
-                        Add money to your pot to keep it separate from your main
-                        balance. As soon as you add this money, it will be
-                        deducted from your current balance.
+                        Withdraw from your pot to put money back in your main
+                        balance. This will reduce the amount you have in this
+                        pot.
                     </DialogDescription>
                 </DialogHeader>
 
@@ -115,15 +109,15 @@ const AddMoneyModal = () => {
                                 </span>
                             </div>
 
-                            <AddMoneyBar
+                            <WithdrawMoneyBar
                                 original_value={selected_pot.total}
-                                new_value={watch("amount")}
+                                withdraw_value={watch("amount")}
                                 max_value={selected_pot.target}
                             />
                         </div>
 
                         <div className="flex flex-col gap-[.4rem]">
-                            <Label htmlFor="name">Amount to Add</Label>
+                            <Label htmlFor="name">Amount to Withdraw</Label>
                             <div
                                 className={cn(
                                     "flex h-[4.5rem] items-center gap-[1.2rem] rounded-[.8rem] border border-beige-500 px-[2rem] text-preset_4 text-beige-500",
@@ -164,4 +158,4 @@ const AddMoneyModal = () => {
     );
 };
 
-export default AddMoneyModal;
+export default WithdrawMoneyModal;

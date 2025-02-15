@@ -5,15 +5,9 @@ interface Props {
     original_value: number;
     new_value: number;
     max_value: number;
-    theme?: string;
 }
 
-const CompareProgressBar = ({
-    original_value,
-    new_value,
-    max_value,
-    theme
-}: Props) => {
+const AddMoneyBar = ({ original_value, new_value, max_value }: Props) => {
     const original_percentage = ((original_value / max_value) * 100).toFixed(2);
     const current_percentage = ((new_value / max_value) * 100).toFixed(2);
     const total_percentage = (
@@ -30,21 +24,15 @@ const CompareProgressBar = ({
                     }}
                 ></div>
                 <div
-                    className="shrink-0 rounded-br-[.4rem] rounded-tr-[.4rem]"
+                    className="shrink-0 rounded-br-[.4rem] rounded-tr-[.4rem] bg-green"
                     style={{
-                        backgroundColor: theme || "#000",
                         width: `${current_percentage}%`
                     }}
                 ></div>
             </div>
 
             <div className="flex items-center justify-between text-gray-500">
-                <span
-                    className="text-preset_5_bold"
-                    style={{
-                        color: theme || "#000"
-                    }}
-                >
+                <span className="text-preset_5_bold text-green">
                     {total_percentage}%
                 </span>
                 <span className="text-preset_5">
@@ -55,4 +43,4 @@ const CompareProgressBar = ({
     );
 };
 
-export default CompareProgressBar;
+export default AddMoneyBar;
