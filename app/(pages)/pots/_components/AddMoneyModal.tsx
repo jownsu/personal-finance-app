@@ -54,13 +54,20 @@ const AddMoneyModal = () => {
 
     const onSubmit = (data: AddWithdrawPotSchema) => {
         console.log(data);
+        setModal("add_money", false);
     };
 
     const onAmountChange = (event: ChangeEvent<HTMLInputElement>) => {
         const input_value = event.target.value;
 
         if (/^\d*$/.test(input_value)) {
-            setValue("amount", +input_value);
+
+            if(selected_pot && selected_pot.total + +input_value <= selected_pot.target) {
+                setValue("amount", +input_value);
+            }
+            else{
+                setValue("amount", (selected_pot?.target || 0)- (selected_pot?.total || 0));
+            }
         }
     };
 
@@ -75,7 +82,7 @@ const AddMoneyModal = () => {
         return null;
     }
 
-    const new_amount = selected_pot.total + watch("amount");
+    const new_amount = selected_pot.total + +watch("amount");
 
     return (
         <Dialog
