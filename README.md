@@ -13,4 +13,3 @@
 - [X] Implement UI/UX of withdraw modal from pot item. (RWD)
     - [X] UI/UX of minimum amount to add.
 - [X] Refactor. use formatToUsd helper.
-- [] Refactor. Check inputs in all modals.
