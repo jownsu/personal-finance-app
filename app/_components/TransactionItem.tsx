@@ -6,7 +6,7 @@ import Image from "next/image";
 import moment from "moment";
 
 /* HELPERS */
-import { cn } from "../_utils/helpers";
+import { cn, formatToUsd } from "../_utils/helpers";
 
 interface Props {
     transaction: {
@@ -42,10 +42,7 @@ const TransactionItem = ({ transaction }: Props) => {
                     })}
                 >
                     {is_positive && "+"}
-                    {transaction.amount.toLocaleString("en-US", {
-                        style: "currency",
-                        currency: "USD"
-                    })}
+                    { formatToUsd(transaction.amount) }
                 </span>
                 <span className="text-preset_5 text-grey-500">
                     {moment(transaction.date).format("D MMM YYYY")}

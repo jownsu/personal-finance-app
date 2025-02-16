@@ -8,6 +8,9 @@ import Doughnut from "./Doughnut";
 /* DATA */
 import { budgets_overview, budgets_overview_overall } from "../_constants/data";
 
+/* HELPERS */
+import { formatToUsd } from "../_utils/helpers";
+
 const Budgets = () => {
     return (
         <div className="flex w-full flex-col gap-[2.8rem] rounded-[1.2rem] bg-white px-[2rem] py-[2.4rem] md:p-[3.2rem] md:gap-[5.1rem] md:pb-[6.3rem] flex-1">
@@ -48,10 +51,7 @@ const Budgets = () => {
                                     {budget.name}
                                 </span>
                                 <span className="text-preset_4_bold text-grey-900">
-                                    {budget.value.toLocaleString("en-US", {
-                                        style: "currency",
-                                        currency: "USD"
-                                    })}
+                                    { formatToUsd(budget.value) }
                                 </span>
                             </div>
                         </div>

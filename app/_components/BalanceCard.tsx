@@ -1,4 +1,4 @@
-import { cn } from "../_utils/helpers";
+import { cn, formatToUsd } from "../_utils/helpers";
 
 interface Props {
     label: string;
@@ -18,10 +18,7 @@ const BalanceCard = ({ label, balance, primary = false }: Props) => {
         >
             <span className="text-preset_4">{label}</span>
             <span className="text-preset_1">
-                {balance.toLocaleString("en-US", {
-                    style: "currency",
-                    currency: "USD"
-                })}
+                { formatToUsd(balance) }
             </span>
         </div>
     );

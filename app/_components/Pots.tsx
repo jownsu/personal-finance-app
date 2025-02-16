@@ -7,6 +7,7 @@ import PotIcon from "@/public/images/icon-pot.svg";
 
 /* DATA */
 import { total_saved, pots_overview } from "../_constants/data";
+import { formatToUsd } from "../_utils/helpers";
 
 const Pots = () => {
     return (
@@ -29,10 +30,7 @@ const Pots = () => {
                             Total Saved
                         </span>
                         <span className="text-preset_1 text-grey-900">
-                            {total_saved.toLocaleString("en-US", {
-                                style: "currency",
-                                currency: "USD"
-                            })}
+                            { formatToUsd(total_saved) }
                         </span>
                     </div>
                 </div>
@@ -51,10 +49,7 @@ const Pots = () => {
                                     {pot.name}
                                 </span>
                                 <span className="text-preset_4_bold text-grey-900">
-                                    {pot.value.toLocaleString("en-US", {
-                                        style: "currency",
-                                        currency: "USD"
-                                    })}
+                                    { formatToUsd(pot.value) }
                                 </span>
                             </div>
                         </div>

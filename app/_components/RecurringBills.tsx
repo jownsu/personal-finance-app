@@ -3,7 +3,12 @@ import Link from "next/link";
 
 /* COMPONENTS */
 import CaretRightIcon from "@/public/images/icon-caret-right.svg";
+
+/* DATA */
 import { recurring_bills } from "../_constants/data";
+
+/* HELPERS */
+import { formatToUsd } from "../_utils/helpers";
 
 const RecurringBills = () => {
     return (
@@ -43,10 +48,7 @@ const BillItem = ({ bill }: BillProps) => {
             >
                 <span className="text-preset_4 text-grey-500">{bill.name}</span>
                 <span className="text-preset_4_bold text-grey-900">
-                    {bill.amount.toLocaleString("en-US", {
-                        style: "currency",
-                        currency: "USD"
-                    })}
+                    { formatToUsd(bill.amount) }
                 </span>
             </div>
         </li>

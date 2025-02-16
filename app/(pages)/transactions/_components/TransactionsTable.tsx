@@ -15,7 +15,7 @@ import {
 } from "@/app/_components/ui/Table";
 
 /* UTILITIES */
-import { cn } from "@/app/_utils/helpers";
+import { cn, formatToUsd } from "@/app/_utils/helpers";
 
 /* DATA */
 import { transactions } from "@/app/_constants/data";
@@ -80,13 +80,7 @@ const TransactionsTable = () => {
                                     })}
                                 >
                                     {transaction.amount > 0 && "+"}
-                                    {transaction.amount.toLocaleString(
-                                        "en-US",
-                                        {
-                                            style: "currency",
-                                            currency: "USD"
-                                        }
-                                    )}
+                                    { formatToUsd(transaction.amount) }
                                 </div>
                                 <div className="text-preset_5 text-grey-500 md:hidden">
                                     {moment(transaction.date).format(

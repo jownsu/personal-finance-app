@@ -16,6 +16,7 @@ import moment from "moment";
 /* CONSTANTS */
 import { BUDGET_LABELS, COLORS_VALUE } from "@/app/_constants/constants";
 import { Budget } from "@/app/_constants/entities";
+import { formatToUsd } from "@/app/_utils/helpers";
 
 interface Props {
     budget: Budget;
@@ -38,10 +39,7 @@ const BudgetItem = ({ budget }: Props) => {
             <div className="flex flex-col gap-[1.6rem]">
                 <div className="text-grey-500">
                     Maximum of{" "}
-                    {budget.maximum.toLocaleString("en-US", {
-                        style: "currency",
-                        currency: "USD"
-                    })}
+                    { formatToUsd(budget.maximum) }
                 </div>
 
                 <ProgressBar
@@ -63,10 +61,9 @@ const BudgetItem = ({ budget }: Props) => {
                                 Spent
                             </span>
                             <span className="text-preset_4_bold text-grey-900">
-                                {budget.spend.toLocaleString("en-US", {
-                                    style: "currency",
-                                    currency: "USD"
-                                })}
+                                {
+                                    formatToUsd(budget.spend)
+                                }
                             </span>
                         </div>
                     </div>
@@ -81,10 +78,7 @@ const BudgetItem = ({ budget }: Props) => {
                                 Free
                             </span>
                             <span className="text-preset_4_bold text-grey-900">
-                                {budget.free.toLocaleString("en-US", {
-                                    style: "currency",
-                                    currency: "USD"
-                                })}
+                                { formatToUsd(budget.free) }
                             </span>
                         </div>
                     </div>
@@ -122,10 +116,7 @@ const BudgetItem = ({ budget }: Props) => {
                             </div>
                             <div className="flex flex-col text-right">
                                 <span className="text-preset_5_bold text-grey-900">
-                                    {spending.amount.toLocaleString("en-US", {
-                                        style: "currency",
-                                        currency: "USD"
-                                    })}
+                                    { formatToUsd(spending.amount) }
                                 </span>
                                 <span className="text-preset_5 text-grey-500">
                                     {moment(spending.date).format("D MMM YYYY")}

@@ -5,13 +5,15 @@ import AddBudgetModal from "./_components/AddBudgetModal";
 import EditBudgetModal from "./_components/EditBudgetModal";
 import DeleteBudgetModal from "./_components/DeleteBudgetModal";
 
-
 /* DATA */
 import {
     budgets,
     budgets_overview,
     budgets_overview_overall
 } from "@/app/_constants/data";
+
+/* HELPERS */
+import { formatToUsd } from "@/app/_utils/helpers";
 
 const BudgetPage = () => {
     return (
@@ -60,23 +62,11 @@ const BudgetPage = () => {
                                         </div>
                                         <div className="flex items-center gap-[.8rem]">
                                             <span className="text-preset_3 text-grey-900">
-                                                {budget.value.toLocaleString(
-                                                    "en-US",
-                                                    {
-                                                        style: "currency",
-                                                        currency: "USD"
-                                                    }
-                                                )}
+                                                { formatToUsd(budget.value) }
                                             </span>
                                             <span className="text-preset_5 text-grey-500">
                                                 of{" "}
-                                                {budget.max_value.toLocaleString(
-                                                    "en-US",
-                                                    {
-                                                        style: "currency",
-                                                        currency: "USD"
-                                                    }
-                                                )}
+                                                { formatToUsd(budget.max_value) }
                                             </span>
                                         </div>
                                     </div>
