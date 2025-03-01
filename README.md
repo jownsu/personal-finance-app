@@ -3,5 +3,5 @@
 # Recurring Bill Page
 
 ## TODO:
-- [] Implement summary component. (RWD)
+- [X] Implement summary component. (RWD)
 - [] Implement recurring bill table. (RWD)
