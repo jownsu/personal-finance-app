@@ -682,21 +682,67 @@ export const pots = [
 
 export const recurring_bills = [
     {
-        id: 1,
-        name: "Paid Bills",
-        theme: "#277C78",
-        amount: 190,
+        name: "Spark Electric Solutions",
+        avatar: "/images/avatars/spark-electric-solutions.jpg",
+        amount: 100,
+        due_date: "Monthly - 2nd",
+        is_due: false,
+        is_paid: true
     },
     {
-        id: 2,
-        name: "Total Upcoming",
-        theme: "#F2CDAC",
-        amount: 194.98,
+        name: "Serenity Spa & Wellness",
+        avatar: "/images/avatars/serenity-spa-and-wellness.jpg",
+        amount: 30,
+        due_date: "Monthly - 3rd",
+        is_due: false,
+        is_paid: true
     },
     {
-        id: 3,
-        name: "Due Soon",
-        theme: "#82C9D7",
-        amount: 59.98,
+        name: "Elevate Education",
+        avatar: "/images/avatars/elevate-education.jpg",
+        amount: 50,
+        due_date: "Monthly - 4th",
+        is_due: false,
+        is_paid: true
+    },
+    {
+        name: "Pixel Playground",
+        avatar: "/images/avatars/pixel-playground.jpg",
+        amount: 10,
+        due_date: "Monthly - 11th",
+        is_due: false,
+        is_paid: true
+    },
+    {
+        name: "Nimbus Data Storage",
+        avatar: "/images/avatars/nimbus-data-storage.jpg",
+        amount: 9.99,
+        due_date: "Monthly - 21st",
+        is_due: true,
+        is_paid: false
+    },
+    {
+        name: "ByteWise",
+        avatar: "/images/avatars/bytewise.jpg",
+        amount: 49.99,
+        due_date: "Monthly - 23rd",
+        is_due: true,
+        is_paid: false
+    },
+    {
+        name: "EcoFuel Energy",
+        avatar: "/images/avatars/ecofuel-energy.jpg",
+        amount: 35,
+        due_date: "Monthly - 29th",
+        is_due: false,
+        is_paid: false
+    },
+    {
+        name: "Aqua Flow Utilities",
+        avatar: "/images/avatars/aqua-flow-utilities.jpg",
+        amount: 100,
+        due_date: "Monthly - 30th",
+        is_due: false,
+        is_paid: false
     }
 ];
