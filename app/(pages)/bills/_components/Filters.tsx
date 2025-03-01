@@ -21,7 +21,7 @@ import { sort_options } from "@/app/_constants/constants";
 const Filters = () => {
     return (
         <div className="sticky top-0 z-50 flex items-center justify-between rounded-[1.2rem] bg-white md:gap-[2.4rem]">
-            <div className="flex h-[4.5rem] w-full max-w-[25.9rem] items-center gap-[1.6rem] rounded-[.8rem] border border-beige-500 bg-white px-[2rem] lg:max-w-[32rem]">
+            <div className="flex h-[4.5rem] w-full max-w-[25.9rem] items-center gap-[1.6rem] rounded-[.8rem] border border-beige-500 bg-white px-[2rem] md:max-w-[32rem]">
                 <input
                     type="text"
                     placeholder="Search bills"
