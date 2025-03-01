@@ -20,8 +20,8 @@ const BillsPage = () => {
         <div className="container flex flex-col gap-[3.9rem] pb-[7.6rem] pt-[2.4rem] md:pb-[5.4rem] md:pt-[3.2rem] lg:pb-[3.2rem]">
             <h1 className="text-preset_1">Recurring Bills</h1>
 
-            <div className="flex flex-col gap-[1.2rem]">
-                <div className="flex h-[11.8rem] items-center gap-[2.4rem] rounded-[1.2rem] bg-grey-900 px-[2.4rem] text-white">
+            <div className="flex flex-col gap-[1.2rem] md:flex-row md:gap-[2.4rem]">
+                <div className="flex h-[11.8rem] items-center gap-[2.4rem] rounded-[1.2rem] bg-grey-900 px-[2.4rem] text-white md:h-[20.4rem] md:flex-1 md:flex-col md:items-start md:justify-between md:pb-[2.4rem] md:pt-[4.1rem]">
                     <BillIcon className="size-[4rem]" />
                     <div className="flex flex-col gap-[1.2rem]">
                         <span className="text-preset_4">Total Bills</span>
@@ -29,7 +29,7 @@ const BillsPage = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-col gap-[.2rem] rounded-[1.2rem] bg-white p-[2rem]">
+                <div className="flex flex-col gap-[.2rem] rounded-[1.2rem] bg-white p-[2rem] md:h-[20.4rem] md:flex-1">
                     <div className="text-preset_3">Summary</div>
                     <div>
                         {SUMMARY.map((summary, index) => (
