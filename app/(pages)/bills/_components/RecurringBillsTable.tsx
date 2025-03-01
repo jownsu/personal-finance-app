@@ -22,11 +22,11 @@ import { cn, formatToUsd } from "@/app/_utils/helpers";
 
 const RecurringBillsTable = () => {
     return (
-        <div className="flex min-h-full w-full flex-col gap-[2.4rem] rounded-[1.2rem] bg-white px-[2rem] py-[2.4rem] md:p-[3.2rem] lg:flex-1">
+        <div className="flex min-h-full w-full flex-col gap-[2.4rem] rounded-[1.2rem] bg-white px-[2rem] py-[2.4rem] md:p-[3.2rem] lg:flex-1 lg:gap-[3.2rem]">
             <Filters />
             <Table>
                 <TableHeader className="hidden md:table-header-group">
-                    <TableRow className="text-grey-500 *:px-0 *:pb-[2rem] *:pt-[1.3rem] *:text-preset_5 lg:*:pt-[.4rem]">
+                    <TableRow className="text-grey-500 *:px-0 *:pb-[2rem] *:pt-[1.3rem] *:text-preset_5 lg:*:pb-[1.1rem] lg:*:pt-[.4rem]">
                         <TableHead>Bill Title</TableHead>
                         <TableHead>Due Date</TableHead>
                         <TableHead className="text-right">Amount</TableHead>
@@ -36,7 +36,7 @@ const RecurringBillsTable = () => {
                     {recurring_bills.map((bill, key) => (
                         <TableRow
                             key={key}
-                            className="*:px-0 *:py-[2.2rem] *:first:pt-0 md:*:first:pb-[1.9rem] md:*:first:pt-[2.4rem]"
+                            className="*:px-0 *:py-[2.2rem] *:first:pt-0 *:last:pb-0 md:*:first:pb-[1.9rem] md:*:first:pt-[2.4rem]"
                         >
                             <TableCell className="flex flex-col gap-[.8rem]">
                                 <div className="flex items-center gap-[1.6rem]">
