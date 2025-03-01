@@ -13,12 +13,6 @@ import {
     TableHeader,
     TableRow
 } from "@/app/_components/ui/Table";
-
-/* UTILITIES */
-import { cn, formatToUsd } from "@/app/_utils/helpers";
-
-/* DATA */
-import { transactions } from "@/app/_constants/data";
 import {
     Pagination,
     PaginationContent,
@@ -28,6 +22,12 @@ import {
     PaginationNext,
     PaginationPrevious
 } from "@/app/_components/ui/Pagination";
+
+/* UTILITIES */
+import { cn, formatToUsd } from "@/app/_utils/helpers";
+
+/* DATA */
+import { transactions } from "@/app/_constants/data";
 
 const TransactionsTable = () => {
     return (
