@@ -4,4 +4,4 @@
 - [X] Transaction filters
 - [] Budget CRUD
 - [] Pots CRUD
-- [] Recurring bills filters
+- [X] Recurring bills filters
