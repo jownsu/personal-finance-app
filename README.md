@@ -1,7 +1,7 @@
 # Frontend Mentor - Personal finance app
 
 ## TODO:
-- [] Transaction filters
+- [X] Transaction filters
 - [] Budget CRUD
 - [] Pots CRUD
 - [] Recurring bills filters
