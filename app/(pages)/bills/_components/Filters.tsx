@@ -16,7 +16,7 @@ import { Icon as RadixSelectIcon } from "@radix-ui/react-select";
 import { FaCaretDown } from "react-icons/fa";
 
 /* CONSTANTS */
-import { sort_options } from "@/app/_constants/constants";
+import { SORT_OPTIONS } from "@/app/_constants/constants";
 
 const Filters = () => {
     return (
@@ -51,7 +51,7 @@ const Filters = () => {
                         </SelectTrigger>
                     </div>
                     <SelectContent>
-                        {sort_options.map((option) => (
+                        {SORT_OPTIONS.map((option) => (
                             <SelectItem key={option.value} value={option.value}>
                                 {option.label}
                             </SelectItem>

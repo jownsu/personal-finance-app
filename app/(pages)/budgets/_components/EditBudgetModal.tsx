@@ -37,7 +37,7 @@ import {
     BudgetForm
 } from "@/app/_constants/_schema/budget.schema";
 import { BUDGET_OPTIONS, COLOR_TAG_OPTIONS } from "@/app/_constants/constants";
-import { BudgetOption } from "@/app/_constants/entities";
+import { BudgetCategory } from "@/app/_constants/entities";
 
 /* UTILITIES */
 import { cn } from "@/app/_utils/helpers";
@@ -58,7 +58,7 @@ const EditBudgetModal = () => {
     } = useForm<BudgetForm>({
         resolver: zodResolver(budget_form_schema),
         defaultValues: {
-            budget_category: BudgetOption.Entertainment,
+            budget_category: BudgetCategory.Entertainment,
             maximum_spending: 0
         }
     });

@@ -1,195 +1,195 @@
-import { BudgetOption, ColorOption } from "./entities";
+import { BudgetCategory, Color, SortData } from "./entities";
 
-export const sort_options = [
+export const SORT_OPTIONS = [
     { 
-        value: "1", 
+        value: SortData.Latest, 
         label: "Latest" 
     },
     { 
-        value: "2", 
+        value: SortData.Oldest, 
         label: "Oldest" 
     },
     { 
-        value: "3", 
+        value: SortData.AtoZ, 
         label: "A to Z" 
     },
     { 
-        value: "4", 
+        value: SortData.ZtoA, 
         label: "Z to A" 
     },
     { 
-        value: "5", 
+        value: SortData.Highest, 
         label: "Highest" 
     },
     { 
-        value: "6", 
+        value: SortData.Lowest, 
         label: "Lowest" 
     }
 ];
 
 export const BUDGET_OPTIONS = [
     {
-        value: BudgetOption.Entertainment,
+        value: BudgetCategory.Entertainment,
         label: "Entertainment"
     },
     {
-        value: BudgetOption.Bills,
+        value: BudgetCategory.Bills,
         label: "Bills"
     },
     {
-        value: BudgetOption.Groceries,
+        value: BudgetCategory.Groceries,
         label: "Groceries"
     },
     {
-        value: BudgetOption.DiningOut,
+        value: BudgetCategory.DiningOut,
         label: "Dining Out"
     },
     {
-        value: BudgetOption.Transportation,
+        value: BudgetCategory.Transportation,
         label: "Transportation"
     },
     {
-        value: BudgetOption.PersonalCare,
+        value: BudgetCategory.PersonalCare,
         label: "Personal Care"
     },
     {
-        value: BudgetOption.Education,
+        value: BudgetCategory.Education,
         label: "Education"
     },
     {
-        value: BudgetOption.Lifestyle,
+        value: BudgetCategory.Lifestyle,
         label: "Lifestyle"
     },
     {
-        value: BudgetOption.Shopping,
+        value: BudgetCategory.Shopping,
         label: "Shopping"
     },
     {
-        value: BudgetOption.General,
+        value: BudgetCategory.General,
         label: "General"
     }
 ]
 
-export const BUDGET_LABELS: Record<BudgetOption, string> = {
-    [BudgetOption.Entertainment]: "Entertainment",
-    [BudgetOption.Bills]: "Bills",
-    [BudgetOption.Groceries]: "Groceries",
-    [BudgetOption.DiningOut]: "Dining Out",
-    [BudgetOption.Transportation]: "Transportation",
-    [BudgetOption.PersonalCare]: "Personal Care",
-    [BudgetOption.Education]: "Education",
-    [BudgetOption.Lifestyle]: "Lifestyle",
-    [BudgetOption.Shopping]: "Shopping",
-    [BudgetOption.General]: "General"
+export const BUDGET_LABELS: Record<BudgetCategory, string> = {
+    [BudgetCategory.Entertainment]: "Entertainment",
+    [BudgetCategory.Bills]: "Bills",
+    [BudgetCategory.Groceries]: "Groceries",
+    [BudgetCategory.DiningOut]: "Dining Out",
+    [BudgetCategory.Transportation]: "Transportation",
+    [BudgetCategory.PersonalCare]: "Personal Care",
+    [BudgetCategory.Education]: "Education",
+    [BudgetCategory.Lifestyle]: "Lifestyle",
+    [BudgetCategory.Shopping]: "Shopping",
+    [BudgetCategory.General]: "General"
 }
 
-export const COLORS_VALUE: Record<ColorOption, string> = {
-    [ColorOption.Green]: "#277C78",
-    [ColorOption.Yellow]: "#F2CDAC",
-    [ColorOption.Cyan]: "#82C9D7",
-    [ColorOption.Navy]: "#626070",
-    [ColorOption.Red]: "#C94736",
-    [ColorOption.Purple]: "#826CB0",
-    [ColorOption.Turquoise]: "#597C7C",
-    [ColorOption.Brown]: "#93674F",
-    [ColorOption.Magenta]: "#934F6F",
-    [ColorOption.Blue]: "#3F82B2",
-    [ColorOption.NavyGrey]: "#97A0AC",
-    [ColorOption.ArmyGreen]: "#7F9161",
-    [ColorOption.Pink]: "#AF81BA",
-    [ColorOption.Gold]: "#CAB361",
-    [ColorOption.Orange]: "#BE6C49"
+export const COLORS_VALUE: Record<Color, string> = {
+    [Color.Green]: "#277C78",
+    [Color.Yellow]: "#F2CDAC",
+    [Color.Cyan]: "#82C9D7",
+    [Color.Navy]: "#626070",
+    [Color.Red]: "#C94736",
+    [Color.Purple]: "#826CB0",
+    [Color.Turquoise]: "#597C7C",
+    [Color.Brown]: "#93674F",
+    [Color.Magenta]: "#934F6F",
+    [Color.Blue]: "#3F82B2",
+    [Color.NavyGrey]: "#97A0AC",
+    [Color.ArmyGreen]: "#7F9161",
+    [Color.Pink]: "#AF81BA",
+    [Color.Gold]: "#CAB361",
+    [Color.Orange]: "#BE6C49"
 };
 
 export const COLOR_TAG_OPTIONS = [
     {
-        value: ColorOption.Green,
+        value: Color.Green,
         label: "Green",
-        theme: COLORS_VALUE[ColorOption.Green],
+        theme: COLORS_VALUE[Color.Green],
         is_used: false
     },
     {
-        value: ColorOption.Yellow,
+        value: Color.Yellow,
         label: "Yellow",
-        theme: COLORS_VALUE[ColorOption.Yellow],
+        theme: COLORS_VALUE[Color.Yellow],
         is_used: false
     },
     {
-        value: ColorOption.Cyan,
+        value: Color.Cyan,
         label: "Cyan",
-        theme: COLORS_VALUE[ColorOption.Cyan],
+        theme: COLORS_VALUE[Color.Cyan],
         is_used: false
     },
     {
-        value: ColorOption.Navy,
+        value: Color.Navy,
         label: "Navy",
-        theme: COLORS_VALUE[ColorOption.Navy],
+        theme: COLORS_VALUE[Color.Navy],
         is_used: false
     },
     {
-        value: ColorOption.Red,
+        value: Color.Red,
         label: "Red",
-        theme: COLORS_VALUE[ColorOption.Red],
+        theme: COLORS_VALUE[Color.Red],
         is_used: false
     },
     {
-        value: ColorOption.Purple,
+        value: Color.Purple,
         label: "Purple",
-        theme: COLORS_VALUE[ColorOption.Purple],
+        theme: COLORS_VALUE[Color.Purple],
         is_used: false
     },
     {
-        value: ColorOption.Turquoise,
+        value: Color.Turquoise,
         label: "Turquoise",
-        theme: COLORS_VALUE[ColorOption.Turquoise],
+        theme: COLORS_VALUE[Color.Turquoise],
         is_used: false
     },
     {
-        value: ColorOption.Brown,
+        value: Color.Brown,
         label: "Brown",
-        theme: COLORS_VALUE[ColorOption.Brown],
+        theme: COLORS_VALUE[Color.Brown],
         is_used: false
     },
     {
-        value: ColorOption.Magenta,
+        value: Color.Magenta,
         label: "Magenta",
-        theme: COLORS_VALUE[ColorOption.Magenta],
+        theme: COLORS_VALUE[Color.Magenta],
         is_used: false
     },
     {
-        value: ColorOption.Blue,
+        value: Color.Blue,
         label: "Blue",
-        theme: COLORS_VALUE[ColorOption.Blue],
+        theme: COLORS_VALUE[Color.Blue],
         is_used: false
     },
     {
-        value: ColorOption.NavyGrey,
+        value: Color.NavyGrey,
         label: "Grey",
-        theme: COLORS_VALUE[ColorOption.NavyGrey],
+        theme: COLORS_VALUE[Color.NavyGrey],
         is_used: false
     },
     {
-        value: ColorOption.ArmyGreen,
+        value: Color.ArmyGreen,
         label: "Army Green",
-        theme: COLORS_VALUE[ColorOption.ArmyGreen],
+        theme: COLORS_VALUE[Color.ArmyGreen],
         is_used: false
     },
     {
-        value: ColorOption.Pink,
+        value: Color.Pink,
         label: "Pink",
-        theme: COLORS_VALUE[ColorOption.Pink],
+        theme: COLORS_VALUE[Color.Pink],
         is_used: false
     },
     {
-        value: ColorOption.Gold,
+        value: Color.Gold,
         label: "Gold",
-        theme: COLORS_VALUE[ColorOption.Gold],
+        theme: COLORS_VALUE[Color.Gold],
         is_used: false
     },
     {
-        value: ColorOption.Orange,
+        value: Color.Orange,
         label: "Orange",
-        theme: COLORS_VALUE[ColorOption.Orange],
+        theme: COLORS_VALUE[Color.Orange],
         is_used: false
     }
 ]

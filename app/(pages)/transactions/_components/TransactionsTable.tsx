@@ -1,3 +1,5 @@
+"use client";
+
 /* REACT */
 import Image from "next/image";
 
@@ -13,23 +15,21 @@ import {
     TableHeader,
     TableRow
 } from "@/app/_components/ui/Table";
-import {
-    Pagination,
-    PaginationContent,
-    PaginationEllipsis,
-    PaginationItem,
-    PaginationLink,
-    PaginationNext,
-    PaginationPrevious
-} from "@/app/_components/ui/Pagination";
+import TablePagination from "@/app/(pages)/transactions/_components/TablePagination";
 
 /* UTILITIES */
 import { cn, formatToUsd } from "@/app/_utils/helpers";
 
-/* DATA */
-import { transactions } from "@/app/_constants/data";
+/* STORE */
+import useTransactionStore from "@/app/_store/transaction.store";
+
+/* CONSTANTS */
+import { BudgetCategoryLabel } from "@/app/_constants/labels";
 
 const TransactionsTable = () => {
+
+    const transactions = useTransactionStore(state => state.transactions);
+
     return (
         <div className="px-[2rem] pb-[2.4rem] md:px-[3.2rem] md:pb-[3.2rem]">
             <Table className="mb-[3.2rem]">
@@ -60,12 +60,12 @@ const TransactionsTable = () => {
                                         {transaction.name}
                                     </span>
                                     <span className="text-preset_5 text-grey-500 md:hidden">
-                                        {transaction.category}
+                                        {BudgetCategoryLabel[transaction.category]}
                                     </span>
                                 </div>
                             </TableCell>
                             <TableCell className="hidden !text-preset_5 text-grey-500 md:table-cell">
-                                {transaction.category}
+                                {BudgetCategoryLabel[transaction.category]}
                             </TableCell>
                             <TableCell className="hidden !text-preset_5 text-grey-500 md:table-cell">
                                 {moment(transaction.date).format("D MMM YYYY")}
@@ -92,42 +92,7 @@ const TransactionsTable = () => {
                     ))}
                 </TableBody>
             </Table>
-            <Pagination>
-                <PaginationContent className="w-full justify-center md:justify-between">
-                    <PaginationItem>
-                        <PaginationPrevious href="#" />
-                    </PaginationItem>
-                    <div className="flex gap-[.8rem]">
-                        <PaginationItem>
-                            <PaginationLink href="#">1</PaginationLink>
-                        </PaginationItem>
-                        <PaginationItem>
-                            <PaginationLink isActive href="#">
-                                2
-                            </PaginationLink>
-                        </PaginationItem>
-                        <PaginationItem className="hidden md:block">
-                            <PaginationLink href="#">
-                                3
-                            </PaginationLink>
-                        </PaginationItem>
-                        <PaginationItem className="hidden md:block">
-                            <PaginationLink href="#">
-                                4
-                            </PaginationLink>
-                        </PaginationItem>
-                        <PaginationItem className="md:hidden">
-                            <PaginationEllipsis />
-                        </PaginationItem>
-                        <PaginationItem>
-                            <PaginationLink href="#">5</PaginationLink>
-                        </PaginationItem>
-                    </div>
-                    <PaginationItem>
-                        <PaginationNext href="#" />
-                    </PaginationItem>
-                </PaginationContent>
-            </Pagination>
+            <TablePagination />
         </div>
     );
 };

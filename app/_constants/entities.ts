@@ -1,4 +1,4 @@
-export enum BudgetOption {
+export enum BudgetCategory {
     Entertainment = "1",
     Bills = "2",
     Groceries = "3",
@@ -11,7 +11,7 @@ export enum BudgetOption {
     General = "10"
 }
 
-export enum ColorOption {
+export enum Color {
     Green = "1",
     Yellow = "2",
     Cyan = "3",
@@ -29,10 +29,19 @@ export enum ColorOption {
     Orange = "15"
 }
 
+export enum SortData {
+    Latest = "latest",
+    Oldest = "oldest",
+    AtoZ = "a-z",
+    ZtoA = "z-a",
+    Highest = "highest",
+    Lowest = "lowest"
+}
+
 export interface Budget {
     id: number;
-    budget_option: BudgetOption;
-    color: ColorOption;
+    budget_option: BudgetCategory;
+    color: Color;
     maximum: number;
     spend: number;
     free: number;
@@ -50,5 +59,15 @@ export interface Pot {
     name: string,
     target: number,
     total: number,
-    color: ColorOption
+    color: Color
+}
+
+export interface Transaction {
+    id: number,
+    avatar: string,
+    name: string,
+    category: BudgetCategory,
+    date: string,
+    amount: number,
+    recurring: boolean
 }
