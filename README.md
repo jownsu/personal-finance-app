@@ -1,7 +1,7 @@
 # Frontend Mentor - Personal finance app
 
-# Recurring Bill Page
-
 ## TODO:
-- [X] Implement summary component. (RWD)
-- [] Implement recurring bill table. (RWD)
+- [] Transaction filters
+- [] Budget CRUD
+- [] Pots CRUD
+- [] Recurring bills filters
