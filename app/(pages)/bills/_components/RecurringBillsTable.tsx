@@ -1,3 +1,5 @@
+"use client";
+
 /* REACT */
 import Image from "next/image";
 
@@ -10,17 +12,21 @@ import {
     TableHeader,
     TableRow
 } from "@/app/_components/ui/Table";
-import { recurring_bills } from "@/app/_constants/data";
 import Filters from "./Filters";
 
 /* ICONS */
 import DueIcon from "@/public/images/icon-bill-due.svg";
 import PaidIcon from "@/public/images/icon-bill-paid.svg";
 
+/* STORE */
+import useBillStore from "@/app/_store/bills.store";
+
 /* UTILITIES */
 import { cn, formatToUsd } from "@/app/_utils/helpers";
 
 const RecurringBillsTable = () => {
+    const bills = useBillStore(state => state.bills);
+
     return (
         <div className="flex min-h-full w-full flex-col gap-[2.4rem] rounded-[1.2rem] bg-white px-[2rem] py-[2.4rem] md:p-[3.2rem] lg:flex-1 lg:gap-[3.2rem]">
             <Filters />
@@ -33,7 +39,7 @@ const RecurringBillsTable = () => {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    {recurring_bills.map((bill, key) => (
+                    {bills.map((bill, key) => (
                         <TableRow
                             key={key}
                             className="*:px-0 *:py-[2.2rem] *:first:pt-0 *:last:pb-0 md:*:first:pb-[1.9rem] md:*:first:pt-[2.4rem]"

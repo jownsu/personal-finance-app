@@ -13,3 +13,13 @@ export interface TransactionFilters {
     category: string,
     sort: string
 };
+
+export const BillsFiltersQuery = {
+    search: parseAsString,
+    sort: parseAsString.withDefault("latest")
+};
+
+export interface BillsFilters {
+    search: string | null,
+    sort: string
+};

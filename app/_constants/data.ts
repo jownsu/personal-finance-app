@@ -603,21 +603,21 @@ export const budgets = [
                 name: "Savory Bites Bistro",
                 date: "2024-08-16T14:23:11Z",
                 avatar: "/images/avatars/green-plate-eatery.jpg",
-                amount: -55.50
+                amount: -55.5
             },
             {
                 id: 2,
                 name: "Ethan Clark",
                 date: "2024-08-12T14:23:11Z",
                 avatar: "/images/avatars/nimbus-data-storage.jpg",
-                amount: -32.50
+                amount: -32.5
             },
             {
                 id: 3,
                 name: "Ella Phillips",
                 date: "2024-08-05T14:23:11Z",
                 avatar: "/images/avatars/pixel-playground.jpg",
-                amount: -45.50
+                amount: -45.5
             }
         ]
     },
@@ -651,7 +651,7 @@ export const budgets = [
                 amount: -30
             }
         ]
-    },
+    }
 ];
 
 export const budgets_overview = [
@@ -728,69 +728,103 @@ export const pots = [
     }
 ];
 
-export const recurring_bills = [
+export const bills = [
     {
+        id: 1,
         name: "Spark Electric Solutions",
         avatar: "/images/avatars/spark-electric-solutions.jpg",
         amount: 100,
         due_date: "Monthly - 2nd",
+        date: "2024-08-19T14:23:11Z",
         is_due: false,
         is_paid: true
     },
     {
+        id: 2,
         name: "Serenity Spa & Wellness",
         avatar: "/images/avatars/serenity-spa-and-wellness.jpg",
         amount: 30,
         due_date: "Monthly - 3rd",
+        date: "2024-08-19T20:23:11Z",
         is_due: false,
         is_paid: true
     },
     {
+        id: 3,
         name: "Elevate Education",
         avatar: "/images/avatars/elevate-education.jpg",
         amount: 50,
         due_date: "Monthly - 4th",
+        date: "2024-08-18T09:45:32Z",
         is_due: false,
         is_paid: true
     },
     {
+        id: 4,
         name: "Pixel Playground",
         avatar: "/images/avatars/pixel-playground.jpg",
         amount: 10,
         due_date: "Monthly - 11th",
+        date: "2024-08-17T16:12:05Z",
         is_due: false,
         is_paid: true
     },
     {
+        id: 5,
         name: "Nimbus Data Storage",
         avatar: "/images/avatars/nimbus-data-storage.jpg",
         amount: 9.99,
         due_date: "Monthly - 21st",
+        date: "2024-08-17T21:08:09Z",
         is_due: true,
         is_paid: false
     },
     {
+        id: 6,
         name: "ByteWise",
         avatar: "/images/avatars/bytewise.jpg",
         amount: 49.99,
         due_date: "Monthly - 23rd",
+        date: "2024-08-15T18:20:33Z",
         is_due: true,
         is_paid: false
     },
     {
+        id: 7,
         name: "EcoFuel Energy",
         avatar: "/images/avatars/ecofuel-energy.jpg",
         amount: 35,
         due_date: "Monthly - 29th",
+        date: "2024-08-14T13:05:27Z",
         is_due: false,
         is_paid: false
     },
     {
+        id: 8,
         name: "Aqua Flow Utilities",
         avatar: "/images/avatars/aqua-flow-utilities.jpg",
         amount: 100,
         due_date: "Monthly - 30th",
+        date: "2024-08-13T20:15:59Z",
         is_due: false,
         is_paid: false
+    }
+];
+
+export const bills_overview = [
+    {
+        name: "Paid Bills",
+        color: Color.Green,
+        amount: 190
+    },
+    {
+        name: "Total Upcoming",
+        color: Color.Yellow,
+        amount: 194.98
+    },
+    {
+        name: "Due Soon",
+        color: Color.Cyan,
+        amount: 59.98
     }
 ];

@@ -34,7 +34,7 @@ const Filters = () => {
 
     useEffect(() => {
         filterTransactions(filters);
-    }, [filters, filterTransactions])
+    }, [filters, filterTransactions]);
 
     return (
         <div className="sticky top-0 z-50 flex items-center justify-between rounded-[1.2rem] bg-white px-[2rem] py-[2.4rem] md:gap-[2.4rem] md:px-[3.2rem] md:py-[3.2rem]">

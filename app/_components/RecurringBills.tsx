@@ -5,10 +5,14 @@ import Link from "next/link";
 import CaretRightIcon from "@/public/images/icon-caret-right.svg";
 
 /* DATA */
-import { recurring_bills } from "../_constants/data";
+import { bills_overview } from "@/app/_constants/data";
 
 /* HELPERS */
-import { formatToUsd } from "../_utils/helpers";
+import { formatToUsd } from "@/app/_utils/helpers";
+
+/* CONSTANTS */
+import { BillOverview } from "@/app/_constants/entities";
+import { COLORS_VALUE } from "@/app/_constants/constants";
 
 const RecurringBills = () => {
     return (
@@ -16,7 +20,7 @@ const RecurringBills = () => {
             <div className="flex items-center justify-between">
                 <h2 className="text-preset_2 text-grey-900">Recurring Bills</h2>
                 <Link
-                    href="/Bills"
+                    href="/bills"
                     className="flex items-center gap-[1.2rem] text-preset_4 text-grey-500"
                 >
                     See Details <CaretRightIcon className="size-[1rem] fill-grey-500" />
@@ -24,8 +28,8 @@ const RecurringBills = () => {
             </div>
 
             <ul className="flex flex-col gap-[1.2rem]">
-                {recurring_bills.map((bill) => (
-                    <BillItem key={bill.id} bill={bill} />
+                {bills_overview.map((bill, index) => (
+                    <BillItem key={index} bill={bill} />
                 ))}
             </ul>
         </div>
@@ -33,18 +37,14 @@ const RecurringBills = () => {
 };
 
 interface BillProps {
-    bill: {
-        name: string;
-        theme: string;
-        amount: number;
-    };
+    bill: BillOverview;
 }
 const BillItem = ({ bill }: BillProps) => {
     return (
         <li>
             <div
                 className="flex h-[6.1rem] items-center justify-between rounded-[.8rem] border-l-[4px] bg-beige-100 px-[1.6rem]"
-                style={{ borderColor: bill.theme }}
+                style={{ borderColor: COLORS_VALUE[bill.color] }}
             >
                 <span className="text-preset_4 text-grey-500">{bill.name}</span>
                 <span className="text-preset_4_bold text-grey-900">

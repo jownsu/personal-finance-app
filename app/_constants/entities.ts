@@ -71,3 +71,20 @@ export interface Transaction {
     amount: number,
     recurring: boolean
 }
+
+export interface Bills {
+    id: number,
+    name: string,
+    avatar: string,
+    amount: number,
+    due_date: string,
+    date: string,
+    is_due: boolean,
+    is_paid: boolean
+}
+
+export interface BillOverview {
+    name: string,
+    color: Color,
+    amount: number
+}
