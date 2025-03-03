@@ -13,7 +13,7 @@ const ProgressBar = ({ value, max_value, theme }: Props) => {
                 className="rounded-[.4rem]"
                 style={{
                     backgroundColor: theme || "#000",
-                    width: `${percentage}%`
+                    width: `${percentage >= 0 ? percentage : 0}%`
                 }}
             ></div>
         </div>
