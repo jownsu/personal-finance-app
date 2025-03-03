@@ -534,7 +534,7 @@ export const budgets = [
         color: Color.Green,
         maximum: 50,
         spend: 25,
-        free: 50,
+        free: 25,
         latest_spending: [
             {
                 id: 1,

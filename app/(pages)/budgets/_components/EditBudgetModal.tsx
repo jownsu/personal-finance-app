@@ -46,6 +46,7 @@ const EditBudgetModal = () => {
     const modal = useBudgetStore((state) => state.modal);
     const setModal = useBudgetStore((state) => state.setModal);
     const selected_budget = useBudgetStore((state) => state.selected_budget);
+    const editBudget = useBudgetStore((state) => state.editBudget);
 
     const {
         register,
@@ -64,7 +65,8 @@ const EditBudgetModal = () => {
     });
 
     const onSubmit = (data: BudgetForm) => {
-        console.log(data);
+        editBudget(data);
+        setModal("edit_budget", false);
     };
 
     const onMaximumSpendingChange = (event: ChangeEvent<HTMLInputElement>) => {

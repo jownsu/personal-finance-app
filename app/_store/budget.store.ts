@@ -18,7 +18,7 @@ interface BudgetStore {
     setModal: (modal: keyof Modals, value: boolean) => void;
     setSelectedBudget: (budget: Budget) => void;
     addBudget: (data: BudgetForm) => void;
-    editBudget: () => void;
+    editBudget: (data: BudgetForm) => void;
     deleteBudget: (id?: number) => void;
 }
 
@@ -53,7 +53,23 @@ const useBudgetStore = create<BudgetStore>()((set) => ({
             ]
         }))
     },
-    editBudget: () => {},
+    editBudget: (data: BudgetForm) => {
+        return set((state) => ({
+            budgets: state.budgets.map(budget => {
+                if(budget.id === data.id){
+                    return {
+                        ...budget,
+                        budget_option: data.budget_category,
+                        maximum: data.maximum_spending,
+                        free: data.maximum_spending - budget.spend,
+                        color: data.color_tag
+                    }
+                }
+
+                return budget;
+            })
+        }))
+    },
     deleteBudget: (id) => {
         return set((state) => ({
             budgets: state.budgets.filter(budget => budget.id !== id)
