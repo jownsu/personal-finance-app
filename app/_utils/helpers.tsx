@@ -11,3 +11,7 @@ export const formatToUsd = (value: number) => {
         currency: "USD"
     });
 };
+
+export const randomId = () => {
+    return Math.ceil(Math.random() * 9999999);
+}

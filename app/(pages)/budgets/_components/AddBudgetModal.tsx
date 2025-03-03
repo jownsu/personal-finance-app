@@ -1,7 +1,7 @@
 "use client";
 
 /* REACT */
-import { ChangeEvent } from "react";
+import { ChangeEvent, useState } from "react";
 
 /* COMPONENTS */
 import Button from "@/app/_components/ui/Button";
@@ -39,16 +39,23 @@ import {
 import { BUDGET_OPTIONS, COLOR_TAG_OPTIONS } from "@/app/_constants/constants";
 import { BudgetCategory } from "@/app/_constants/entities";
 
+/* STORE */
+import useBudgetStore from "@/app/_store/budget.store";
+
 /* UTILITIES */
 import { cn } from "@/app/_utils/helpers";
 
 const AddBudgetModal = () => {
+
+    const [show_modal, setShowModal] = useState(false);
+
     const {
         register,
         control,
         handleSubmit,
         setValue,
         watch,
+        reset,
         formState: { errors }
     } = useForm<BudgetForm>({
         resolver: zodResolver(budget_form_schema),
@@ -57,8 +64,12 @@ const AddBudgetModal = () => {
         }
     });
 
+    const addBudget = useBudgetStore(state => state.addBudget);
+
     const onSubmit = (data: BudgetForm) => {
-        console.log(data);
+        addBudget(data);
+        setShowModal(false);
+        reset();
     };
 
     const onMaximumSpendingChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -70,7 +81,7 @@ const AddBudgetModal = () => {
     };
 
     return (
-        <Dialog>
+        <Dialog open={show_modal} onOpenChange={(open) => setShowModal(open)}>
             <DialogTrigger asChild>
                 <Button
                     type="button"

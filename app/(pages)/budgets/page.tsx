@@ -1,13 +1,12 @@
 /* COMPONENTS */
 import Doughnut from "@/app/_components/Doughnut";
-import BudgetItem from "./_components/BudgetItem";
 import AddBudgetModal from "./_components/AddBudgetModal";
-import EditBudgetModal from "./_components/EditBudgetModal";
 import DeleteBudgetModal from "./_components/DeleteBudgetModal";
+import EditBudgetModal from "./_components/EditBudgetModal";
+import BudgetList from "./_components/BudgetList";
 
 /* DATA */
 import {
-    budgets,
     budgets_overview,
     budgets_overview_overall
 } from "@/app/_constants/data";
@@ -74,11 +73,7 @@ const BudgetPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-[2.4rem] lg:flex-1">
-                        {budgets.map((budget) => (
-                            <BudgetItem key={budget.id} budget={budget} />
-                        ))}
-                    </div>
+                    <BudgetList />
                 </div>
             </div>
             <EditBudgetModal />
