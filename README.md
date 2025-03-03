@@ -2,6 +2,6 @@
 
 ## TODO:
 - [X] Transaction filters
-- [] Budget CRUD
+- [X] Budget CRUD
 - [] Pots CRUD
 - [X] Recurring bills filters
