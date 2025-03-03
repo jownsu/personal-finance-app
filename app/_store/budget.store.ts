@@ -19,7 +19,7 @@ interface BudgetStore {
     setSelectedBudget: (budget: Budget) => void;
     addBudget: (data: BudgetForm) => void;
     editBudget: () => void;
-    deleteBudget: () => void;
+    deleteBudget: (id?: number) => void;
 }
 
 const useBudgetStore = create<BudgetStore>()((set) => ({
@@ -54,7 +54,11 @@ const useBudgetStore = create<BudgetStore>()((set) => ({
         }))
     },
     editBudget: () => {},
-    deleteBudget: () => {}
+    deleteBudget: (id) => {
+        return set((state) => ({
+            budgets: state.budgets.filter(budget => budget.id !== id)
+        }))
+    }
 }));
 
 export default useBudgetStore;

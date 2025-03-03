@@ -19,9 +19,11 @@ const DeleteBudgetModal = () => {
     const modal = useBudgetStore((state) => state.modal);
     const setModal = useBudgetStore((state) => state.setModal);
     const selected_budget = useBudgetStore((state) => state.selected_budget);
+    const deleteBudget = useBudgetStore((state) => state.deleteBudget);
 
     const onDelete = (id?: number) => {
-        console.log(id);
+        deleteBudget(id);
+        setModal("delete_budget", false);
     };
 
     return (
