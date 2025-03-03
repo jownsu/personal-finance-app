@@ -595,7 +595,7 @@ export const budgets = [
         budget_option: BudgetCategory.DiningOut,
         color: Color.Yellow,
         maximum: 75,
-        spend: 133.75,
+        spend: 70.75,
         free: 0,
         latest_spending: [
             {

@@ -5,7 +5,7 @@ interface Props {
 }
 
 const ProgressBar = ({ value, max_value, theme }: Props) => {
-    const percentage = (value / max_value) * 100;
+    const percentage = 100 - ((value / max_value) * 100);
 
     return (
         <div className="h-[2.4rem] md:h-[3.2rem] w-full rounded-[.4rem] p-[.4rem] bg-beige-100 flex">
