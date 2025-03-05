@@ -22,8 +22,10 @@ const DeleteBudgetModal = () => {
     const deleteBudget = useBudgetStore((state) => state.deleteBudget);
 
     const onDelete = (id?: number) => {
-        deleteBudget(id);
-        setModal("delete_budget", false);
+        if(id){
+            deleteBudget(id);
+            setModal("delete_budget", false);
+        }
     };
 
     return (

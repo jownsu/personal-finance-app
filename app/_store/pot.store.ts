@@ -20,7 +20,7 @@ interface PotStore {
     setModal: (modal: keyof Modals, value: boolean) => void;
     setSelectedpot: (pot: Pot) => void;
     addPot: (data: PotForm) => void;
-    deletePot: (id?: number) => void;
+    deletePot: (id: number) => void;
     editPot: (data: PotForm) => void;
     addMoney: (id: number, amount: number) => void;
     withdrawMoney: (id: number, amount: number) => void;

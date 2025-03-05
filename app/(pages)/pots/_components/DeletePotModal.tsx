@@ -21,8 +21,10 @@ const DeletePotModal = () => {
     const deletePot = usePotStore((state) => state.deletePot);
 
     const onDelete = (id?: number) => {
-        deletePot(id);
-        setModal("delete_pot", false);
+        if(id){
+            deletePot(id);
+            setModal("delete_pot", false);
+        }
     };
 
     return (

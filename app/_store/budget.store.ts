@@ -19,7 +19,7 @@ interface BudgetStore {
     setSelectedBudget: (budget: Budget) => void;
     addBudget: (data: BudgetForm) => void;
     editBudget: (data: BudgetForm) => void;
-    deleteBudget: (id?: number) => void;
+    deleteBudget: (id: number) => void;
 }
 
 const useBudgetStore = create<BudgetStore>()((set) => ({
