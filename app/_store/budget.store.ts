@@ -53,7 +53,7 @@ const useBudgetStore = create<BudgetStore>()((set) => ({
             ]
         }))
     },
-    editBudget: (data: BudgetForm) => {
+    editBudget: (data) => {
         return set((state) => ({
             budgets: state.budgets.map(budget => {
                 if(budget.id === data.id){

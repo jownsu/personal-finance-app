@@ -35,6 +35,7 @@ const AddMoneyModal = () => {
     const modal = usePotStore((state) => state.modal);
     const setModal = usePotStore((state) => state.setModal);
     const selected_pot = usePotStore((state) => state.selected_pot);
+    const addMoney = usePotStore((state) => state.addMoney);
 
     const {
         register,
@@ -51,8 +52,10 @@ const AddMoneyModal = () => {
     });
 
     const onSubmit = (data: AddWithdrawPotSchema) => {
-        console.log(data);
-        setModal("add_money", false);
+        if(data.id){
+            addMoney(data.id, data.amount);
+            setModal("add_money", false);
+        }
     };
 
     const onAmountChange = (event: ChangeEvent<HTMLInputElement>) => {

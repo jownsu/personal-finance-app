@@ -3,11 +3,8 @@ import AddMoneyModal from "./_components/AddMoneyModal";
 import AddPotModal from "./_components/AddPotModal";
 import DeletePotModal from "./_components/DeletePotModal";
 import EditPotModal from "./_components/EditPotModal";
-import PotItem from "./_components/PotItem";
+import PotList from "./_components/PotList";
 import WithdrawMoneyModal from "./_components/WithdrawMoneyModal";
-
-/* DATA */
-import { pots } from "@/app/_constants/data";
 
 const PotsPage = () => {
     return (
@@ -17,12 +14,7 @@ const PotsPage = () => {
                     <h1 className="text-preset_1">Pots</h1>
                     <AddPotModal />
                 </div>
-
-                <div className="grid gap-[2.4rem] md:grid-cols-2">
-                    {pots.map((pot) => (
-                        <PotItem key={pot.id} pot={pot} />
-                    ))}
-                </div>
+                <PotList />
             </div>
             <EditPotModal />
             <DeletePotModal />

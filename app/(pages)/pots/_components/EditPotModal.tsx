@@ -48,6 +48,7 @@ const EditPotModal = () => {
     const modal = usePotStore((state) => state.modal);
     const setModal = usePotStore((state) => state.setModal);
     const selected_pot = usePotStore((state) => state.selected_pot);
+    const editPot = usePotStore((state) => state.editPot);
 
     const {
         register,
@@ -64,7 +65,8 @@ const EditPotModal = () => {
     const [pot_name, setPotName] = useState("");
 
     const onSubmit = (data: PotForm) => {
-        console.log(data);
+        editPot(data);
+        setModal("edit_pot", false);
     };
 
     const onTargetChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -154,7 +156,7 @@ const EditPotModal = () => {
                                     onChange={(event) => {
                                         onTargetChange(event);
                                     }}
-                                    value={watch("target") || ""}
+                                    value={watch("target")?.toString() || "0"}
                                 />
                             </div>
                             {errors.target && (

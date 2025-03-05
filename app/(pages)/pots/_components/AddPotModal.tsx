@@ -28,6 +28,9 @@ import { Label } from "@/app/_components/ui/Label";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
 
+/* STORE */
+import usePotStore from "@/app/_store/pot.store";
+
 /* ICONS */
 import CaretDown from "@/public/images/icon-caret-down.svg";
 
@@ -43,12 +46,15 @@ import { cn } from "@/app/_utils/helpers";
 const MAX_POT_NAME_LENGTH = 30;
 
 const AddPotModal = () => {
+    const [show_modal, setShowModal] = useState(false);
+    const addPot = usePotStore(state => state.addPot);
     const {
         register,
         control,
         handleSubmit,
         setValue,
         watch,
+        reset,
         formState: { errors }
     } = useForm<PotForm>({
         resolver: zodResolver(pot_form_schema)
@@ -57,7 +63,9 @@ const AddPotModal = () => {
     const [pot_name, setPotName] = useState("");
 
     const onSubmit = (data: PotForm) => {
-        console.log(data);
+        addPot(data);
+        setShowModal(false);
+        reset();
     };
 
     const onTargetChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -69,7 +77,7 @@ const AddPotModal = () => {
     };
 
     return (
-        <Dialog>
+        <Dialog open={show_modal} onOpenChange={(open) => setShowModal(open)}>
             <DialogTrigger asChild>
                 <Button
                     type="button"
