@@ -27,12 +27,7 @@ const TablePagination = () => {
     }
 
     return (
-        <Pagination
-            defaultValue={"1"}
-            onChange={(value) => {
-                console.log(value);
-            }}
-        >
+        <Pagination defaultValue={"1"}>
             <PaginationContent className="w-full justify-center md:justify-between">
                 <PaginationItem>
                     <PaginationPrevious
@@ -43,7 +38,7 @@ const TablePagination = () => {
                         }}
                     />
                 </PaginationItem>
-                <div className="flex gap-[.8rem]">
+                <div className="flex gap-[.8rem] overflow-auto">
                     {[...Array(pages_count)].map((_, index) => {
                         const current_page = index + 1;
 
