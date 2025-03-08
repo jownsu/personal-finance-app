@@ -15,3 +15,5 @@ const TransactionPage = () => {
 };
 
 export default TransactionPage;
+
+export const dynamic = "force-dynamic";

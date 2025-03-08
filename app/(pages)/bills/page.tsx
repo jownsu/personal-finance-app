@@ -16,3 +16,5 @@ const BillsPage = () => {
 };
 
 export default BillsPage;
+
+export const dynamic = "force-dynamic";
